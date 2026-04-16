@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Brand colors — Anchor purple + warm amber accent ── */
+  --color-brand:           oklch(0.50 0.22 292);
+  --color-brand-mid:       oklch(0.44 0.22 292);
+  --color-brand-deep:      oklch(0.24 0.16 292);
+
+  --color-amber:           oklch(0.80 0.14 68);
+  --color-amber-dark:      oklch(0.68 0.16 65);
+  --color-amber-light:     oklch(0.96 0.04 68);
+
+  /* Warm cream surfaces */
+  --color-surface:         oklch(0.97 0.008 80);
+  --color-surface-2:       oklch(0.93 0.009 80);
+  --color-white:           oklch(0.99 0.004 80);
+
+  /* Text — brand-tinted neutrals */
+  --color-ink:             oklch(0.18 0.05 292);
+  --color-ink-muted:       oklch(0.47 0.022 292);
+  --color-ink-faint:       oklch(0.65 0.012 292);
+
+  /* Borders */
+  --color-border:          oklch(0.89 0.009 292);
+  --color-border-strong:   oklch(0.82 0.013 292);
+
+  /* ── Typography ── */
+  --font-display: "Bitter", Georgia, serif;
+  --font-body:    "Lexend", system-ui, sans-serif;
+
+  /* ── Spacing ── */
+  --spacing-section: 6rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Animation keyframes ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in-right {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes bar-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--delay, 0ms);
+  }
+  .animate-fade-in-right {
+    animation: fade-in-right 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--delay, 0ms);
+  }
+  .bar-animate {
+    transform-origin: left center;
+    animation: bar-grow 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--delay, 0ms);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in-right,
+  .bar-animate {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/*
+  All base styles inside @layer base so Tailwind @layer utilities
+  can correctly override them. Unlayered rules beat ALL layered rules.
+*/
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::selection {
+    background-color: var(--color-brand);
+    color: white;
+  }
 }
