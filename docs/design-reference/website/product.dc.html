@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/base.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/components/components.css">
+  <script src="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/_ds_bundle.js"></script>
+  <script src="reveal.js"></script>
+  <style>
+    body { margin: 0; background: var(--background); }
+  </style>
+</helmet>
+
+<div data-screen-label="Product" style="min-height: 100vh; background: var(--background); color: var(--foreground); font-family: var(--font-sans); font-size: 16px; line-height: 1.5;">
+
+  <!-- ── Nav ── -->
+  <header style="position: sticky; top: 0; z-index: 50; background: color-mix(in oklch, var(--background) 85%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="Website Home.dc.html" style="display: flex; align-items: center; gap: 9px; text-decoration: none;">
+        <img src="assets/brand/mark-purple.png" alt="Anchor mark" style="width: 30px; height: 30px; object-fit: contain;">
+        <img src="assets/brand/wordmark-purple.png" alt="anchor" style="height: 17px; width: auto; object-fit: contain;">
+      </a>
+      <nav style="display: flex; align-items: center; gap: 4px;">
+        <a href="Website Product.dc.html" style="padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 600; color: var(--foreground); background: var(--accent); text-decoration: none; white-space: nowrap;">Product</a>
+        <a href="Website Who its for.dc.html" style="padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--muted-foreground); text-decoration: none; white-space: nowrap;" style-hover="background: var(--accent); color: var(--accent-foreground);">Who it's for</a>
+        <a href="Website Pricing.dc.html" style="padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--muted-foreground); text-decoration: none; white-space: nowrap;" style-hover="background: var(--accent); color: var(--accent-foreground);">Pricing</a>
+        <a href="Website About.dc.html" style="padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--muted-foreground); text-decoration: none; white-space: nowrap;" style-hover="background: var(--accent); color: var(--accent-foreground);">About</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="Website Get started.dc.html" style="font-size: 14px; font-weight: 500; color: var(--muted-foreground); text-decoration: none; white-space: nowrap;" style-hover="color: var(--foreground);">Sign in</a>
+        <a href="Website Get started.dc.html" class="anc-btn" style="display: inline-flex; align-items: center; height: 38px; padding: 0 18px; border-radius: 10px; background: var(--primary); color: var(--primary-foreground); font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap;">Get started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Page hero ── -->
+  <section style="position: relative; overflow: hidden; background: var(--card); border-bottom: 1px solid var(--border);">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(color-mix(in oklch, var(--border) 55%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklch, var(--border) 55%, transparent) 1px, transparent 1px); background-size: 44px 44px; pointer-events: none;"></div>
+    <div style="position: relative; max-width: 1120px; margin: 0 auto; padding: 80px 24px 64px;">
+      <p style="margin: 0 0 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary);">Product</p>
+      <h1 style="margin: 0 0 18px; font-family: var(--font-display); font-weight: 700; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; letter-spacing: -0.02em; max-width: 640px; text-wrap: balance;">Everything payday needs, in <span style="box-shadow: inset 0 -0.3em color-mix(in oklch, var(--primary) 24%, transparent);">one place</span>.</h1>
+      <p style="margin: 0; max-width: 540px; font-size: 17px; line-height: 1.6; color: var(--muted-foreground); text-wrap: pretty;">A list of your people, a wallet that funds them, and two ways to run the payment. That's Anchor. Here's each piece.</p>
+    </div>
+  </section>
+
+  <!-- ── Employees ── -->
+  <section data-screen-label="Employees feature">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+      <div>
+        <p style="margin: 0 0 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary);">Your people</p>
+        <h2 style="margin: 0 0 18px; font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; letter-spacing: -0.015em;">One list, always ready to pay.</h2>
+        <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.65; color: var(--muted-foreground); text-wrap: pretty;">Add each person once: their name, mobile money number, and what you pay them. Full-time staff, casual workers, or a mix. When it's time to pay, the list is the payroll.</p>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;">
+          <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;">
+            <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="check" size="{{ 18 }}" style="color: var(--success); margin-top: 2px;" hint-size="18px,18px"></x-import>
+            Fixed salaries or per-job amounts. Set what fits each person.
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;">
+            <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="check" size="{{ 18 }}" style="color: var(--success); margin-top: 2px;" hint-size="18px,18px"></x-import>
+            Anchor checks the number is a valid mobile money account before you pay.
+          </li>
+          <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;">
+            <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="check" size="{{ 18 }}" style="color: var(--success); margin-top: 2px;" hint-size="18px,18px"></x-import>
+            Pause someone for a month without deleting them.
+          </li>
+        </ul>
+      </div>
+      <div style="display: flex; justify-content: flex-end;">
+        <div style="width: 100%; max-width: 420px; background: var(--surface-raised); border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 1px 2px oklch(0.2 0.02 195 / 0.06), 0 8px 24px oklch(0.2 0.02 195 / 0.07); overflow: hidden;">
+          <div style="padding: 18px 24px 12px; display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-foreground);">Employees · 9</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--primary);">
+              <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="user-plus" size="{{ 14 }}" hint-size="14px,14px"></x-import>
+              Add person
+            </span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 24px; border-top: 1px solid var(--border);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="width: 34px; height: 34px; border-radius: 999px; background: var(--secondary); color: var(--secondary-foreground); display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600;">CM</span>
+              <div style="display: flex; flex-direction: column; gap: 1px;">
+                <span style="font-size: 14px; font-weight: 600;">Chanda Mwila</span>
+                <span style="font-size: 12px; color: var(--muted-foreground);">Shopkeeper · monthly</span>
+              </div>
+            </div>
+            <span class="tabular" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600;">K3,200.00</span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 24px; border-top: 1px solid var(--border);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="width: 34px; height: 34px; border-radius: 999px; background: var(--secondary); color: var(--secondary-foreground); display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600;">GT</span>
+              <div style="display: flex; flex-direction: column; gap: 1px;">
+                <span style="font-size: 14px; font-weight: 600;">Grace Tembo</span>
+                <span style="font-size: 12px; color: var(--muted-foreground);">Accounts · monthly</span>
+              </div>
+            </div>
+            <span class="tabular" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600;">K2,850.00</span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 24px; border-top: 1px solid var(--border);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="width: 34px; height: 34px; border-radius: 999px; background: var(--secondary); color: var(--secondary-foreground); display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600;">JB</span>
+              <div style="display: flex; flex-direction: column; gap: 1px;">
+                <span style="font-size: 14px; font-weight: 600;">Joseph Banda</span>
+                <span style="font-size: 12px; color: var(--muted-foreground);">Driver · per job</span>
+              </div>
+            </div>
+            <span class="tabular" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600;">K400.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Run payroll ── -->
+  <section data-screen-label="Run payroll feature" style="background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px;">
+      <p style="margin: 0 0 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary);">Running payroll</p>
+      <h2 style="margin: 0 0 18px; font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; letter-spacing: -0.015em; max-width: 560px;">Review it, run it, done.</h2>
+      <p style="margin: 0 0 48px; max-width: 540px; font-size: 16px; line-height: 1.65; color: var(--muted-foreground); text-wrap: pretty;">Before any money moves, Anchor shows you the whole run: who's being paid, how much, and what it totals. You approve it; we handle the rest.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div style="background: var(--background); border: 1px solid var(--border); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px; transition: transform var(--duration-base) var(--ease-out-expo), box-shadow var(--duration-base) var(--ease-out-expo), border-color var(--duration-base) var(--ease-out-expo);" style-hover="transform: translateY(-4px); box-shadow: 0 12px 28px oklch(0.2 0.02 195 / 0.10); border-color: color-mix(in oklch, var(--primary) 30%, var(--border));">
+          <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="rotate-cw" size="{{ 22 }}" style="color: var(--primary);" hint-size="22px,22px"></x-import>
+          <h3 style="margin: 0; font-family: var(--font-display); font-size: 18px; font-weight: 600;">Automatic runs</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: var(--muted-foreground);">Set your payday and Anchor prepares the run each cycle. You get a reminder to review and approve. Nothing pays out on its own.</p>
+        </div>
+        <div style="background: var(--background); border: 1px solid var(--border); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px; transition: transform var(--duration-base) var(--ease-out-expo), box-shadow var(--duration-base) var(--ease-out-expo), border-color var(--duration-base) var(--ease-out-expo);" style-hover="transform: translateY(-4px); box-shadow: 0 12px 28px oklch(0.2 0.02 195 / 0.10); border-color: color-mix(in oklch, var(--primary) 30%, var(--border));">
+          <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="arrow-up-right" size="{{ 22 }}" style="color: var(--primary);" hint-size="22px,22px"></x-import>
+          <h3 style="margin: 0; font-family: var(--font-display); font-size: 18px; font-weight: 600;">At-will payments</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: var(--muted-foreground);">Pick anyone on your list and pay them now, for a finished job, an advance, or a one-off. Same proof, same record.</p>
+        </div>
+        <div style="background: var(--background); border: 1px solid var(--border); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 12px; transition: transform var(--duration-base) var(--ease-out-expo), box-shadow var(--duration-base) var(--ease-out-expo), border-color var(--duration-base) var(--ease-out-expo);" style-hover="transform: translateY(-4px); box-shadow: 0 12px 28px oklch(0.2 0.02 195 / 0.10); border-color: color-mix(in oklch, var(--primary) 30%, var(--border));">
+          <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="eye" size="{{ 22 }}" style="color: var(--primary);" hint-size="22px,22px"></x-import>
+          <h3 style="margin: 0; font-family: var(--font-display); font-size: 18px; font-weight: 600;">Live status</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: var(--muted-foreground);">Watch each payment land as it happens. If one fails (a wrong number, a full wallet) you'll see it named, with a retry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Proof ── -->
+  <section data-screen-label="Proof feature">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+      <div style="display: flex; justify-content: flex-start; order: 1;">
+        <div style="width: 100%; max-width: 380px; background: var(--surface-raised); border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 1px 2px oklch(0.2 0.02 195 / 0.06), 0 8px 24px oklch(0.2 0.02 195 / 0.07); padding: 24px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 8px; color: var(--success);">
+            <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="check-circle" size="{{ 18 }}" hint-size="18px,18px"></x-import>
+            <span style="font-size: 14px; font-weight: 600;">Payment confirmed</span>
+          </div>
+          <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Money" value="{{ 3200 }}" size="lg" hint-size="auto,28px"></x-import>
+          <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted-foreground); border-top: 1px solid var(--border); padding-top: 14px;">
+            <span>To: Chanda Mwila · MTN ···· 4821</span>
+            <span>From: Kalulu Trading Ltd</span>
+            <span>28 June 2026 · 09:14 · Ref ANC-4471</span>
+          </div>
+        </div>
+      </div>
+      <div style="order: 2;">
+        <p style="margin: 0 0 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary);">Proof of payment</p>
+        <h2 style="margin: 0 0 18px; font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; letter-spacing: -0.015em;">A record both sides can point to.</h2>
+        <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.65; color: var(--muted-foreground); text-wrap: pretty;">Every payment creates a record: who, how much, when, and the reference. Your employee gets confirmation on their phone; you get a history you can search and export. No more "did you send it?" conversations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Money safety ── -->
+  <section data-screen-label="Money safety" style="background: var(--card); border-top: 1px solid var(--border);">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px;">
+      <div style="max-width: 620px; margin-bottom: 48px;">
+        <p style="margin: 0 0 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary);">Your money</p>
+        <h2 style="margin: 0 0 18px; font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; letter-spacing: -0.015em;">Nothing moves without you.</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.65; color: var(--muted-foreground); text-wrap: pretty;">Anchor is built like a ledger, not a black box. Your wallet balance is yours, every movement is recorded, and no payment leaves without your approval.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; background: var(--background); border: 1px solid var(--border); border-radius: 16px; transition: transform var(--duration-base) var(--ease-out-expo), box-shadow var(--duration-base) var(--ease-out-expo), border-color var(--duration-base) var(--ease-out-expo);" style-hover="transform: translateY(-4px); box-shadow: 0 12px 28px oklch(0.2 0.02 195 / 0.10); border-color: color-mix(in oklch, var(--primary) 30%, var(--border));">
+          <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="lock" size="{{ 20 }}" style="color: var(--primary);" hint-size="20px,20px"></x-import>
+          <h3 style="margin: 0; font-family: var(--font-display); font-size: 17px; font-weight: 600;">You approve every run</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: var(--muted-foreground);">Scheduled or at will, a payment only goes out after you've reviewed and confirmed it.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; background: var(--background); border: 1px solid var(--border); border-radius: 16px; transition: transform var(--duration-base) var(--ease-out-expo), box-shadow var(--duration-base) var(--ease-out-expo), border-color var(--duration-base) var(--ease-out-expo);" style-hover="transform: translateY(-4px); box-shadow: 0 12px 28px oklch(0.2 0.02 195 / 0.10); border-color: color-mix(in oklch, var(--primary) 30%, var(--border));">
+          <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="shield-check" size="{{ 20 }}" style="color: var(--primary);" hint-size="20px,20px"></x-import>
+          <h3 style="margin: 0; font-family: var(--font-display); font-size: 17px; font-weight: 600;">Your balance is ring-fenced</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: var(--muted-foreground);">Wallet funds are held for payroll and nothing else. Withdraw them back to your account any time.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; background: var(--background); border: 1px solid var(--border); border-radius: 16px; transition: transform var(--duration-base) var(--ease-out-expo), box-shadow var(--duration-base) var(--ease-out-expo), border-color var(--duration-base) var(--ease-out-expo);" style-hover="transform: translateY(-4px); box-shadow: 0 12px 28px oklch(0.2 0.02 195 / 0.10); border-color: color-mix(in oklch, var(--primary) 30%, var(--border));">
+          <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="file-text" size="{{ 20 }}" style="color: var(--primary);" hint-size="20px,20px"></x-import>
+          <h3 style="margin: 0; font-family: var(--font-display); font-size: 17px; font-weight: 600;">Everything is on the record</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: var(--muted-foreground);">Every top-up, payout, and retry is logged with a reference, exportable whenever you need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section style="border-top: 1px solid var(--border);">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 72px 24px; display: flex; align-items: center; justify-content: space-between; gap: 32px;">
+      <h2 style="margin: 0; font-family: var(--font-display); font-weight: 700; font-size: clamp(24px, 2.5vw, 32px); letter-spacing: -0.015em;">Ready to run your first payroll?</h2>
+      <a href="Website Get started.dc.html" class="anc-btn" style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 10px; background: var(--primary); color: var(--primary-foreground); font-size: 15px; font-weight: 600; text-decoration: none; flex-shrink: 0;">Create your account
+        <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="arrow-right" size="{{ 16 }}" hint-size="16px,16px"></x-import>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer data-screen-label="Footer" style="background: oklch(0.165 0.012 195); color: oklch(0.94 0.008 195);">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 56px 24px 40px;">
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid oklch(0.285 0.012 195);">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 9px;">
+            
+            <span style="font-family: var(--font-display); font-weight: 700; font-size: 19px; color: #9b6fc4;">anchor</span>
+          </div>
+          <p style="margin: 0; max-width: 300px; font-size: 14px; line-height: 1.6; color: oklch(0.72 0.013 195);">Payroll that pays your people on their phones. Made in Lusaka, Zambia.</p>
+        </div>
+        <nav style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.72 0.013 195); margin-bottom: 4px;">Product</span>
+          <a href="Website Product.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">How it works</a>
+          <a href="Website Who its for.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">Who it's for</a>
+          <a href="Website Pricing.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">Pricing</a>
+        </nav>
+        <nav style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.72 0.013 195); margin-bottom: 4px;">Company</span>
+          <a href="Website About.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">About</a>
+          <a href="Website Get started.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">Get started</a>
+        </nav>
+      </div>
+      <div style="padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+        <span style="font-size: 13px; color: oklch(0.72 0.013 195);">© 2026 Anchor · Automated Money Solutions</span>
+        
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+</body>
+</html>

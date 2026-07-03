@@ -1,0 +1,94 @@
+/* ------------------------------------------------------------------ *
+   Anchor — Base layer & utility classes
+
+   The few non-token rules consumers rely on: the body type defaults,
+   the "statement-caption" eyebrow, ledger tabular-nums, the single-
+   token status-text helper, and the entrance keyframes.
+ * ------------------------------------------------------------------ */
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  border-color: var(--border);
+}
+
+/* Money & figures: tabular, lined up like a ledger. */
+.tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "ss01" 1;
+}
+
+/* Small tracked labels — the "statement caption" voice. */
+.eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-medium);
+}
+
+/*
+  Readable status text from a single --tone. Mixing toward pure
+  black/white (not the brand-tinted foreground) keeps the hue true —
+  a red stays red instead of drifting to orange — and light-dark()
+  keeps contrast in both themes.
+*/
+.text-tone {
+  color: light-dark(
+    color-mix(in oklch, var(--tone) 72%, black),
+    color-mix(in oklch, var(--tone) 82%, white)
+  );
+}
+
+/* Page-load entrance: subtle rise + fade, staggered via --i. */
+@keyframes anchor-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes anchor-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes anchor-spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-rise {
+  animation: anchor-rise var(--duration-slow) var(--ease-out-expo) both;
+  animation-delay: calc(var(--i, 0) * var(--stagger-step));
+}
+
+.animate-fade {
+  animation: anchor-fade var(--duration-fast) var(--ease-out-quart) both;
+}
+
+.animate-modal {
+  animation: anchor-rise var(--duration-base) var(--ease-out-expo) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-fade,
+  .animate-modal {
+    animation-duration: 0.01ms;
+    animation-delay: 0ms;
+  }
+}

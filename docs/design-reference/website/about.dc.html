@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/base.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/components/components.css">
+  <script src="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/_ds_bundle.js"></script>
+  <script src="reveal.js"></script>
+  <style>
+    body { margin: 0; background: var(--background); }
+  </style>
+</helmet>
+
+<div data-screen-label="About" style="min-height: 100vh; background: var(--background); color: var(--foreground); font-family: var(--font-sans); font-size: 16px; line-height: 1.5; display: flex; flex-direction: column;">
+
+  <!-- ── Nav ── -->
+  <header style="position: sticky; top: 0; z-index: 50; background: color-mix(in oklch, var(--background) 85%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; box-sizing: border-box;">
+      <a href="Website Home.dc.html" style="display: flex; align-items: center; gap: 9px; text-decoration: none;">
+        <img src="assets/brand/mark-purple.png" alt="Anchor mark" style="width: 30px; height: 30px; object-fit: contain;">
+        <img src="assets/brand/wordmark-purple.png" alt="anchor" style="height: 17px; width: auto; object-fit: contain;">
+      </a>
+      <nav style="display: flex; align-items: center; gap: 4px;">
+        <a href="Website Product.dc.html" style="padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--muted-foreground); text-decoration: none; white-space: nowrap;" style-hover="background: var(--accent); color: var(--accent-foreground);">Product</a>
+        <a href="Website Who its for.dc.html" style="padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--muted-foreground); text-decoration: none; white-space: nowrap;" style-hover="background: var(--accent); color: var(--accent-foreground);">Who it's for</a>
+        <a href="Website Pricing.dc.html" style="padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--muted-foreground); text-decoration: none; white-space: nowrap;" style-hover="background: var(--accent); color: var(--accent-foreground);">Pricing</a>
+        <a href="Website About.dc.html" style="padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 600; color: var(--foreground); background: var(--accent); text-decoration: none; white-space: nowrap;">About</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="Website Get started.dc.html" style="font-size: 14px; font-weight: 500; color: var(--muted-foreground); text-decoration: none; white-space: nowrap;" style-hover="color: var(--foreground);">Sign in</a>
+        <a href="Website Get started.dc.html" class="anc-btn" style="display: inline-flex; align-items: center; height: 38px; padding: 0 18px; border-radius: 10px; background: var(--primary); color: var(--primary-foreground); font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap;">Get started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── About body ── -->
+  <section style="flex: 1;">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 80px 24px 96px;">
+      <div style="max-width: 640px;">
+        <p style="margin: 0 0 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary);">About</p>
+        <h1 style="margin: 0 0 24px; font-family: var(--font-display); font-weight: 700; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; letter-spacing: -0.02em; text-wrap: balance;">Payday is a promise. We help you <span style="box-shadow: inset 0 -0.3em color-mix(in oklch, var(--primary) 24%, transparent);">keep it</span>.</h1>
+        <div style="display: flex; flex-direction: column; gap: 18px; font-size: 17px; line-height: 1.7; color: var(--muted-foreground);">
+          <p style="margin: 0; text-wrap: pretty;">Anchor started with a simple observation: in Zambia, most people are paid onto their phones. But the tools employers use to pay them were built for banks, spreadsheets, and somewhere else entirely.</p>
+          <p style="margin: 0; text-wrap: pretty;">So business owners spend payday evenings sending mobile money one number at a time, checking amounts against a spreadsheet, and hoping nothing slips. The people they pay wait, and wonder.</p>
+          <p style="margin: 0; text-wrap: pretty;">We're building the payroll system that matches how money actually moves here: a wallet you control, a list of your people, and payments that land on phones with proof: automatically on payday, or the moment the work is done.</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 64px;">
+        <div style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px; transition: transform var(--duration-base) var(--ease-out-expo), box-shadow var(--duration-base) var(--ease-out-expo), border-color var(--duration-base) var(--ease-out-expo);" style-hover="transform: translateY(-4px); box-shadow: 0 12px 28px oklch(0.2 0.02 195 / 0.10); border-color: color-mix(in oklch, var(--primary) 30%, var(--border));">
+          <p style="margin: 0; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary);">Where we are</p>
+          <h2 style="margin: 0; font-family: var(--font-display); font-size: 19px; font-weight: 600;">Made in Lusaka</h2>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: var(--muted-foreground);">We're a Zambian team building for Zambian payrolls: the networks, the habits, the month-end realities.</p>
+        </div>
+        <div style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px; transition: transform var(--duration-base) var(--ease-out-expo), box-shadow var(--duration-base) var(--ease-out-expo), border-color var(--duration-base) var(--ease-out-expo);" style-hover="transform: translateY(-4px); box-shadow: 0 12px 28px oklch(0.2 0.02 195 / 0.10); border-color: color-mix(in oklch, var(--primary) 30%, var(--border));">
+          <p style="margin: 0; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary);">Where we're at</p>
+          <h2 style="margin: 0; font-family: var(--font-display); font-size: 19px; font-weight: 600;">Early days, honestly</h2>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: var(--muted-foreground);">This is version one. MTN payouts are live; Airtel and Zamtel are coming. We'd rather tell you that plainly than pretend otherwise.</p>
+        </div>
+        <div style="background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px; transition: transform var(--duration-base) var(--ease-out-expo), box-shadow var(--duration-base) var(--ease-out-expo), border-color var(--duration-base) var(--ease-out-expo);" style-hover="transform: translateY(-4px); box-shadow: 0 12px 28px oklch(0.2 0.02 195 / 0.10); border-color: color-mix(in oklch, var(--primary) 30%, var(--border));">
+          <p style="margin: 0; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary);">How we work</p>
+          <h2 style="margin: 0; font-family: var(--font-display); font-size: 19px; font-weight: 600;">With our customers</h2>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: var(--muted-foreground);">Founding customers talk directly to the people building Anchor. What you need next is what we build next.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 64px; padding: 40px; background: var(--card); border: 1px solid var(--border); border-radius: 16px; display: flex; align-items: center; justify-content: space-between; gap: 32px;">
+        <div>
+          <h2 style="margin: 0 0 8px; font-family: var(--font-display); font-size: 24px; font-weight: 700;">Want to talk to us?</h2>
+          <p style="margin: 0; font-size: 15px; color: var(--muted-foreground);">We're happy to walk you through Anchor before you commit to anything.</p>
+        </div>
+        <a href="Website Get started.dc.html" class="anc-btn" style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 10px; background: var(--primary); color: var(--primary-foreground); font-size: 15px; font-weight: 600; text-decoration: none; flex-shrink: 0;">Get in touch
+          <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="arrow-right" size="{{ 16 }}" hint-size="16px,16px"></x-import>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer data-screen-label="Footer" style="background: oklch(0.165 0.012 195); color: oklch(0.94 0.008 195);">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 56px 24px 40px;">
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid oklch(0.285 0.012 195);">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 9px;">
+            
+            <span style="font-family: var(--font-display); font-weight: 700; font-size: 19px; color: #9b6fc4;">anchor</span>
+          </div>
+          <p style="margin: 0; max-width: 300px; font-size: 14px; line-height: 1.6; color: oklch(0.72 0.013 195);">Payroll that pays your people on their phones. Made in Lusaka, Zambia.</p>
+        </div>
+        <nav style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.72 0.013 195); margin-bottom: 4px;">Product</span>
+          <a href="Website Product.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">How it works</a>
+          <a href="Website Who its for.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">Who it's for</a>
+          <a href="Website Pricing.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">Pricing</a>
+        </nav>
+        <nav style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.72 0.013 195); margin-bottom: 4px;">Company</span>
+          <a href="Website About.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">About</a>
+          <a href="Website Get started.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">Get started</a>
+        </nav>
+      </div>
+      <div style="padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+        <span style="font-size: 13px; color: oklch(0.72 0.013 195);">© 2026 Anchor · Automated Money Solutions</span>
+        
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+</body>
+</html>

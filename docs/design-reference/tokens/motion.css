@@ -1,0 +1,20 @@
+/* ------------------------------------------------------------------ *
+   Anchor — Motion tokens
+
+   Exponential ease-outs. No bounce, no spring overshoot — money UIs
+   should feel settled and certain. Entrances are a subtle rise + fade.
+   Everything respects prefers-reduced-motion.
+ * ------------------------------------------------------------------ */
+
+:root {
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1); /* @kind other */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1); /* @kind other */
+
+  --duration-fast: 0.2s; /* @kind other */
+  --duration-base: 0.26s; /* @kind other */
+  --duration-slow: 0.62s; /* @kind other */
+  --duration-meter: 0.9s; /* @kind other */
+
+  --stagger-step: 70ms; /* @kind other */
+}

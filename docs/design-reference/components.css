@@ -1,0 +1,126 @@
+/* ------------------------------------------------------------------ *
+   Anchor — Component classes
+
+   Interaction states (hover / focus-visible / active / disabled) that
+   can't live in inline styles. Components reference these classes; the
+   visual tokens still come from tokens/*.css. Shipped to consumers via
+   styles.css so the classes work in production too.
+ * ------------------------------------------------------------------ */
+
+/* ---- Button ------------------------------------------------------- */
+.anc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-sm);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--duration-fast) var(--ease-out-quart),
+    color var(--duration-fast) var(--ease-out-quart),
+    border-color var(--duration-fast) var(--ease-out-quart),
+    opacity var(--duration-fast) var(--ease-out-quart);
+  outline: none;
+}
+.anc-btn:focus-visible {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 45%, transparent);
+}
+.anc-btn:disabled { pointer-events: none; opacity: 0.5; }
+
+/* sizes */
+.anc-btn[data-size="sm"] { height: 2rem; padding: 0 0.75rem; gap: 0.375rem; }
+.anc-btn[data-size="default"] { height: 2.25rem; padding: 0 1rem; }
+.anc-btn[data-size="lg"] { height: 2.5rem; padding: 0 1.5rem; font-size: var(--text-base); }
+.anc-btn[data-size="icon"] { height: 2.25rem; width: 2.25rem; padding: 0; }
+.anc-btn[data-size="icon-sm"] { height: 2rem; width: 2rem; padding: 0; }
+
+/* variants */
+.anc-btn[data-variant="default"] { background: var(--primary); color: var(--primary-foreground); }
+.anc-btn[data-variant="default"]:hover { background: color-mix(in oklch, var(--primary) 90%, black); }
+
+.anc-btn[data-variant="secondary"] { background: var(--secondary); color: var(--secondary-foreground); }
+.anc-btn[data-variant="secondary"]:hover { background: color-mix(in oklch, var(--secondary) 80%, var(--foreground) 6%); }
+
+.anc-btn[data-variant="outline"] { background: var(--background); color: var(--foreground); border-color: var(--border); box-shadow: var(--shadow-xs); }
+.anc-btn[data-variant="outline"]:hover { background: var(--accent); color: var(--accent-foreground); }
+
+.anc-btn[data-variant="ghost"] { background: transparent; color: var(--foreground); }
+.anc-btn[data-variant="ghost"]:hover { background: var(--accent); color: var(--accent-foreground); }
+
+.anc-btn[data-variant="destructive"] { background: var(--destructive); color: var(--destructive-foreground); }
+.anc-btn[data-variant="destructive"]:hover { background: color-mix(in oklch, var(--destructive) 90%, black); }
+
+.anc-btn[data-variant="link"] { background: transparent; color: var(--primary); padding-left: 0; padding-right: 0; height: auto; }
+.anc-btn[data-variant="link"]:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---- Input -------------------------------------------------------- */
+.anc-input {
+  height: 2.25rem;
+  width: 100%;
+  min-width: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--foreground);
+  background: var(--background);
+  border: 1px solid var(--input);
+  border-radius: var(--radius-sm);
+  padding: 0 0.75rem;
+  box-shadow: var(--shadow-xs);
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-out-quart),
+    box-shadow var(--duration-fast) var(--ease-out-quart);
+}
+.anc-input::placeholder { color: var(--muted-foreground); }
+.anc-input:focus-visible {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 45%, transparent);
+}
+.anc-input:disabled { pointer-events: none; opacity: 0.5; }
+.anc-input[aria-invalid="true"] {
+  border-color: var(--destructive);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--destructive) 25%, transparent);
+}
+
+/* ---- Card --------------------------------------------------------- */
+.anc-card {
+  background: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---- Interactive list row / quick action ------------------------- */
+.anc-row-btn {
+  display: flex;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out-quart);
+}
+.anc-row-btn:hover { background: var(--accent); }
+.anc-row-btn:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 3px color-mix(in oklch, var(--ring) 40%, transparent);
+}
+
+/* ---- Tab / segmented pill ----------------------------------------- */
+.anc-tab {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-medium);
+  color: var(--muted-foreground);
+  transition: color var(--duration-fast) var(--ease-out-quart);
+}
+.anc-tab:hover { color: var(--foreground); }
+.anc-tab[data-active="true"] { color: var(--foreground); }

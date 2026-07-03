@@ -1,0 +1,39 @@
+/* ------------------------------------------------------------------ *
+   Anchor — Spacing, radius & elevation tokens
+
+   Spacing is a 4px base scale. Corner radius derives from a single
+   --radius (0.75rem); components step down/up from it (sm/md/lg/xl)
+   exactly as the product's Tailwind theme does. Shadows are soft and
+   low — bank-grade calm, never floaty.
+ * ------------------------------------------------------------------ */
+
+:root {
+  /* Spacing — 4px base */
+  --space-1: 0.25rem;   /*  4px */
+  --space-2: 0.5rem;    /*  8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px — panel padding */
+  --space-6: 1.5rem;    /* 24px */
+  --space-7: 1.75rem;   /* 28px — focal band padding */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+
+  /* Radius — single source, components step from it */
+  --radius: 0.75rem;                       /* 12px — the base card radius */
+  --radius-sm: calc(var(--radius) - 4px);  /*  8px — inputs, small buttons */
+  --radius-md: calc(var(--radius) - 2px);  /* 10px */
+  --radius-lg: var(--radius);              /* 12px */
+  --radius-xl: calc(var(--radius) + 4px);  /* 16px — panels / focal bands */
+  --radius-full: 9999px;                   /* pills, badges, avatars */
+
+  /* Elevation — soft, low, single-direction */
+  --shadow-xs: 0 1px 2px 0 oklch(0.2 0.02 160 / 0.05);
+  --shadow-sm: 0 1px 3px 0 oklch(0.2 0.02 160 / 0.08), 0 1px 2px -1px oklch(0.2 0.02 160 / 0.06);
+  --shadow-md: 0 4px 12px -2px oklch(0.2 0.02 160 / 0.1), 0 2px 6px -2px oklch(0.2 0.02 160 / 0.06);
+  --shadow-lg: 0 16px 40px -8px oklch(0.2 0.02 160 / 0.18);
+
+  /* App content max width */
+  --container-max: 72rem;  /* 1152px — the 6xl content column */
+}

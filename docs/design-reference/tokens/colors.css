@@ -1,0 +1,143 @@
+/* ------------------------------------------------------------------ *
+   Anchor — Color tokens  ("Ledger teal" system)
+
+   The product UI runs on one grounded brand hue: a calm, trustworthy
+   teal at oklch hue ≈ 195. Neutrals are tinted toward it so surfaces
+   feel of a single material. Light is the daytime default; dark is a
+   true peer.
+
+   Two layers:
+     1. BASE palette   — raw oklch values (--primary, --background …)
+     2. SEMANTIC aliases mirror Tailwind's color names so product code
+        ("bg-card", "text-muted-foreground") maps 1:1.
+
+   The Anchor *logo* is purple (--brand-purple). It is a brand / marketing
+   token, NOT the product-UI accent. See readme.md › "Brand colour".
+ * ------------------------------------------------------------------ */
+
+:root {
+  color-scheme: light;
+
+  /* — Surfaces & text — */
+  --background: oklch(0.972 0.006 195);
+  --foreground: oklch(0.245 0.018 195);
+
+  --card: oklch(0.995 0.004 195);
+  --card-foreground: oklch(0.245 0.018 195);
+  --popover: oklch(0.995 0.004 195);
+  --popover-foreground: oklch(0.245 0.018 195);
+
+  /* Elevated surface (one step above card) — the focal payroll/balance band */
+  --surface-raised: oklch(0.99 0.006 195);
+
+  /* — Brand / primary (the rare 10% accent: money action + positive confirm) — */
+  --primary: oklch(0.52 0.10 195);
+  --primary-foreground: oklch(0.99 0.012 195);
+
+  --secondary: oklch(0.94 0.013 195);
+  --secondary-foreground: oklch(0.32 0.03 195);
+
+  --muted: oklch(0.952 0.009 195);
+  --muted-foreground: oklch(0.46 0.018 195);
+
+  --accent: oklch(0.93 0.02 195);
+  --accent-foreground: oklch(0.3 0.035 195);
+
+  /* — Status (always paired with an icon + word, never colour alone) — */
+  --destructive: oklch(0.505 0.18 27);
+  --destructive-foreground: oklch(0.99 0.01 27);
+
+  --success: oklch(0.5 0.13 158);
+  --success-foreground: oklch(0.99 0.012 158);
+
+  --warning: oklch(0.66 0.14 75);
+  --warning-foreground: oklch(0.27 0.05 75);
+
+  /* — Lines & focus — */
+  --border: oklch(0.9 0.01 195);
+  --input: oklch(0.89 0.011 195);
+  --ring: oklch(0.52 0.10 195);
+
+  /* — Data viz — */
+  --chart-1: oklch(0.52 0.10 195);
+  --chart-2: oklch(0.62 0.1 230);
+  --chart-3: oklch(0.66 0.14 75);
+  --chart-4: oklch(0.55 0.13 300);
+  --chart-5: oklch(0.55 0.16 25);
+
+  /* — Sidebar / app chrome — */
+  --sidebar: oklch(0.99 0.004 195);
+  --sidebar-foreground: oklch(0.245 0.018 195);
+  --sidebar-primary: oklch(0.52 0.10 195);
+  --sidebar-primary-foreground: oklch(0.99 0.012 195);
+  --sidebar-accent: oklch(0.93 0.02 195);
+  --sidebar-accent-foreground: oklch(0.3 0.035 195);
+  --sidebar-border: oklch(0.9 0.01 195);
+  --sidebar-ring: oklch(0.52 0.10 195);
+
+  /* — Brand logo purple (marketing / logo only — not product UI) — */
+  --brand-purple: #662d91;
+  --brand-purple-600: #5a2780;
+  --brand-purple-700: #4c2169;
+  --brand-purple-foreground: oklch(0.99 0.01 300);
+}
+
+.dark {
+  color-scheme: dark;
+
+  --background: oklch(0.165 0.012 195);
+  --foreground: oklch(0.94 0.008 195);
+
+  --card: oklch(0.197 0.014 195);
+  --card-foreground: oklch(0.94 0.008 195);
+  --popover: oklch(0.215 0.015 195);
+  --popover-foreground: oklch(0.94 0.008 195);
+
+  --surface-raised: oklch(0.225 0.016 195);
+
+  --primary: oklch(0.74 0.10 195);
+  --primary-foreground: oklch(0.18 0.03 195);
+
+  --secondary: oklch(0.25 0.013 195);
+  --secondary-foreground: oklch(0.92 0.008 195);
+
+  --muted: oklch(0.25 0.011 195);
+  --muted-foreground: oklch(0.72 0.013 195);
+
+  --accent: oklch(0.275 0.018 195);
+  --accent-foreground: oklch(0.95 0.01 195);
+
+  --destructive: oklch(0.62 0.17 27);
+  --destructive-foreground: oklch(0.98 0.012 27);
+
+  --success: oklch(0.74 0.13 158);
+  --success-foreground: oklch(0.18 0.03 158);
+
+  --warning: oklch(0.8 0.13 82);
+  --warning-foreground: oklch(0.2 0.04 82);
+
+  --border: oklch(0.285 0.012 195);
+  --input: oklch(0.31 0.013 195);
+  --ring: oklch(0.74 0.10 195);
+
+  --chart-1: oklch(0.74 0.10 195);
+  --chart-2: oklch(0.7 0.1 230);
+  --chart-3: oklch(0.8 0.13 82);
+  --chart-4: oklch(0.7 0.13 300);
+  --chart-5: oklch(0.68 0.16 25);
+
+  --sidebar: oklch(0.197 0.014 195);
+  --sidebar-foreground: oklch(0.94 0.008 195);
+  --sidebar-primary: oklch(0.74 0.10 195);
+  --sidebar-primary-foreground: oklch(0.18 0.03 195);
+  --sidebar-accent: oklch(0.275 0.018 195);
+  --sidebar-accent-foreground: oklch(0.95 0.01 195);
+  --sidebar-border: oklch(0.285 0.012 195);
+  --sidebar-ring: oklch(0.74 0.10 195);
+
+  /* Brand purple lifts in dark so the mark stays legible on dark chrome */
+  --brand-purple: #9b6fc4;
+  --brand-purple-600: #8a5bb8;
+  --brand-purple-700: #7a4aa8;
+  --brand-purple-foreground: oklch(0.18 0.03 300);
+}

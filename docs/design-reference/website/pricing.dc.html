@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/tokens/base.css">
+  <link rel="stylesheet" href="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/components/components.css">
+  <script src="_ds/anchor-payroll-design-system-8c2662be-0f46-4e75-af51-ba918394a465/_ds_bundle.js"></script>
+  <script src="reveal.js"></script>
+  <style>
+    body { margin: 0; background: var(--background); }
+  </style>
+</helmet>
+
+<div data-screen-label="Pricing" style="min-height: 100vh; background: var(--background); color: var(--foreground); font-family: var(--font-sans); font-size: 16px; line-height: 1.5; display: flex; flex-direction: column;">
+
+  <!-- ── Nav ── -->
+  <header style="position: sticky; top: 0; z-index: 50; background: color-mix(in oklch, var(--background) 85%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; box-sizing: border-box;">
+      <a href="Website Home.dc.html" style="display: flex; align-items: center; gap: 9px; text-decoration: none;">
+        <img src="assets/brand/mark-purple.png" alt="Anchor mark" style="width: 30px; height: 30px; object-fit: contain;">
+        <img src="assets/brand/wordmark-purple.png" alt="anchor" style="height: 17px; width: auto; object-fit: contain;">
+      </a>
+      <nav style="display: flex; align-items: center; gap: 4px;">
+        <a href="Website Product.dc.html" style="padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--muted-foreground); text-decoration: none; white-space: nowrap;" style-hover="background: var(--accent); color: var(--accent-foreground);">Product</a>
+        <a href="Website Who its for.dc.html" style="padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--muted-foreground); text-decoration: none; white-space: nowrap;" style-hover="background: var(--accent); color: var(--accent-foreground);">Who it's for</a>
+        <a href="Website Pricing.dc.html" style="padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 600; color: var(--foreground); background: var(--accent); text-decoration: none; white-space: nowrap;">Pricing</a>
+        <a href="Website About.dc.html" style="padding: 7px 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--muted-foreground); text-decoration: none; white-space: nowrap;" style-hover="background: var(--accent); color: var(--accent-foreground);">About</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="Website Get started.dc.html" style="font-size: 14px; font-weight: 500; color: var(--muted-foreground); text-decoration: none; white-space: nowrap;" style-hover="color: var(--foreground);">Sign in</a>
+        <a href="Website Get started.dc.html" class="anc-btn" style="display: inline-flex; align-items: center; height: 38px; padding: 0 18px; border-radius: 10px; background: var(--primary); color: var(--primary-foreground); font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap;">Get started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Pricing body ── -->
+  <section style="flex: 1;">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 80px 24px 96px;">
+      <div style="max-width: 620px; margin-bottom: 56px;">
+        <p style="margin: 0 0 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary);">Pricing</p>
+        <h1 style="margin: 0 0 18px; font-family: var(--font-display); font-weight: 700; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; letter-spacing: -0.02em; text-wrap: balance;">We're setting pricing with our <span style="box-shadow: inset 0 -0.3em color-mix(in oklch, var(--primary) 24%, transparent);">founding customers</span>.</h1>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--muted-foreground); text-wrap: pretty;">Anchor is in early access, and we'd rather price it with you than at you. Join now and you'll help shape a simple, per-payout price. Founding terms lock in before public pricing launches.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 880px;">
+        <!-- Founding customer card -->
+        <div style="background: var(--surface-raised); border: 1px solid var(--border); border-radius: 16px; padding: 36px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 1px 2px oklch(0.2 0.02 195 / 0.06), 0 8px 24px oklch(0.2 0.02 195 / 0.07);">
+          <div>
+            <p style="margin: 0 0 10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary);">Founding customer</p>
+            <h2 style="margin: 0 0 6px; font-family: var(--font-display); font-size: 26px; font-weight: 700;">Early access</h2>
+            <p style="margin: 0; font-size: 14px; color: var(--muted-foreground);">For SMEs and individuals joining now.</p>
+          </div>
+          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;">
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;">
+              <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="check" size="{{ 18 }}" style="color: var(--success); margin-top: 2px;" hint-size="18px,18px"></x-import>
+              Full product: wallet, scheduled and at-will payroll, records
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;">
+              <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="check" size="{{ 18 }}" style="color: var(--success); margin-top: 2px;" hint-size="18px,18px"></x-import>
+              Founding terms locked in before public pricing
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;">
+              <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="check" size="{{ 18 }}" style="color: var(--success); margin-top: 2px;" hint-size="18px,18px"></x-import>
+              A direct line to the team in Lusaka
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px;">
+              <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="check" size="{{ 18 }}" style="color: var(--success); margin-top: 2px;" hint-size="18px,18px"></x-import>
+              A say in what we build next
+            </li>
+          </ul>
+          <a href="Website Get started.dc.html" class="anc-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 10px; background: var(--primary); color: var(--primary-foreground); font-size: 15px; font-weight: 600; text-decoration: none; margin-top: auto;">Talk to us about joining
+            <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="arrow-right" size="{{ 16 }}" hint-size="16px,16px"></x-import>
+          </a>
+        </div>
+
+        <!-- What to expect card -->
+        <div style="background: var(--card); border: 1px dashed var(--border); border-radius: 16px; padding: 36px; display: flex; flex-direction: column; gap: 20px;">
+          <div>
+            <p style="margin: 0 0 10px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-foreground);">Public pricing · coming soon</p>
+            <h2 style="margin: 0 0 6px; font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--muted-foreground);">What to expect</h2>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 16px; font-size: 15px; line-height: 1.6; color: var(--muted-foreground);">
+            <p style="margin: 0; text-wrap: pretty;">Our promise when pricing lands:</p>
+            <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px;">
+              <li style="display: flex; align-items: flex-start; gap: 10px;">
+                <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="check" size="{{ 18 }}" style="color: var(--muted-foreground); margin-top: 2px;" hint-size="18px,18px"></x-import>
+                Simple and per-payout: you pay when you pay people
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;">
+                <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="check" size="{{ 18 }}" style="color: var(--muted-foreground); margin-top: 2px;" hint-size="18px,18px"></x-import>
+                No monthly minimums for small teams
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 10px;">
+                <x-import component-from-global-scope="AnchorPayrollDesignSystem_8c2662.Icon" name="check" size="{{ 18 }}" style="color: var(--muted-foreground); margin-top: 2px;" hint-size="18px,18px"></x-import>
+                Every fee shown before you approve a run, no surprises
+              </li>
+            </ul>
+          </div>
+          <p style="margin: auto 0 0; font-size: 13px; color: var(--muted-foreground);">Founding customers will see it first.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer data-screen-label="Footer" style="background: oklch(0.165 0.012 195); color: oklch(0.94 0.008 195);">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 56px 24px 40px;">
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid oklch(0.285 0.012 195);">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 9px;">
+            
+            <span style="font-family: var(--font-display); font-weight: 700; font-size: 19px; color: #9b6fc4;">anchor</span>
+          </div>
+          <p style="margin: 0; max-width: 300px; font-size: 14px; line-height: 1.6; color: oklch(0.72 0.013 195);">Payroll that pays your people on their phones. Made in Lusaka, Zambia.</p>
+        </div>
+        <nav style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.72 0.013 195); margin-bottom: 4px;">Product</span>
+          <a href="Website Product.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">How it works</a>
+          <a href="Website Who its for.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">Who it's for</a>
+          <a href="Website Pricing.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">Pricing</a>
+        </nav>
+        <nav style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.72 0.013 195); margin-bottom: 4px;">Company</span>
+          <a href="Website About.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">About</a>
+          <a href="Website Get started.dc.html" style="font-size: 14px; color: oklch(0.94 0.008 195); text-decoration: none;" style-hover="text-decoration: underline;">Get started</a>
+        </nav>
+      </div>
+      <div style="padding-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+        <span style="font-size: 13px; color: oklch(0.72 0.013 195);">© 2026 Anchor · Automated Money Solutions</span>
+        
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+</body>
+</html>
