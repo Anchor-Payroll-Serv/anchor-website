@@ -1,36 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Brand colors — Anchor purple + warm amber accent ── */
-  --color-brand:           oklch(0.50 0.22 292);
-  --color-brand-mid:       oklch(0.44 0.22 292);
-  --color-brand-deep:      oklch(0.24 0.16 292);
-
-  --color-amber:           oklch(0.80 0.14 68);
-  --color-amber-dark:      oklch(0.68 0.16 65);
-  --color-amber-light:     oklch(0.96 0.04 68);
-
-  /* Warm cream surfaces */
-  --color-surface:         oklch(0.97 0.008 80);
-  --color-surface-2:       oklch(0.93 0.009 80);
-  --color-white:           oklch(0.99 0.004 80);
-
-  /* Text — brand-tinted neutrals */
-  --color-ink:             oklch(0.18 0.05 292);
-  --color-ink-muted:       oklch(0.47 0.022 292);
-  --color-ink-faint:       oklch(0.65 0.012 292);
-
-  /* Borders */
-  --color-border:          oklch(0.89 0.009 292);
-  --color-border-strong:   oklch(0.82 0.013 292);
-
   /* ── Typography ── */
   --font-display: "Bricolage Grotesque", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", "Menlo", monospace;
-
-  /* ── Spacing ── */
-  --spacing-section: 6rem;
 }
 
 /* ------------------------------------------------------------------ *
@@ -39,9 +13,8 @@
    Plain custom properties — consumed via var(--x) in inline styles,
    NOT auto-generated Tailwind utilities. See plan Global Constraint 5.
 
-   The legacy --color-* tokens above this block remain in place until
-   every consumer is migrated (Global Constraint 2) — do not remove them
-   here.
+   The legacy purple/amber tokens this design replaced have been fully
+   removed as of this redesign's final cleanup task.
  * ------------------------------------------------------------------ */
 :root {
   color-scheme: light;
@@ -199,45 +172,6 @@
   --brand-purple-foreground: oklch(0.18 0.03 300);
 }
 
-/* ── Animation keyframes ── */
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fade-in-right {
-  from { opacity: 0; transform: translateX(32px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-@keyframes bar-grow {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-
-@layer utilities {
-  .animate-fade-up {
-    animation: fade-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
-    animation-delay: var(--delay, 0ms);
-  }
-  .animate-fade-in-right {
-    animation: fade-in-right 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
-    animation-delay: var(--delay, 0ms);
-  }
-  .bar-animate {
-    transform-origin: left center;
-    animation: bar-grow 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
-    animation-delay: var(--delay, 0ms);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-fade-up,
-  .animate-fade-in-right,
-  .bar-animate {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
 
 /*
   All base styles inside @layer base so Tailwind @layer utilities
@@ -254,10 +188,10 @@
   }
 
   body {
-    background-color: var(--color-surface);
-    color: var(--color-ink);
-    font-family: var(--font-body);
-    line-height: 1.65;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    line-height: var(--leading-normal);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -271,11 +205,6 @@
   a {
     color: inherit;
     text-decoration: none;
-  }
-
-  ::selection {
-    background-color: var(--color-brand);
-    color: white;
   }
 }
 
