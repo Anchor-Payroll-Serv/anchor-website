@@ -24,12 +24,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Anchor Payroll | Payroll and Mobile Money Payments in One System",
-    template: "%s | Anchor Payroll",
+    default: "Anchor | Payroll on mobile money, for Zambia",
+    template: "%s | Anchor",
   },
   description:
-    "Anchor is a secure payroll distribution platform that helps Zambian employers calculate payroll, pay workers via mobile money, and maintain compliant employee records — all in one place.",
-  keywords: ["payroll", "mobile money", "Zambia", "MTN", "Airtel", "Zamtel", "NAPSA", "NHIMA"],
+    "Anchor gives your business a payroll wallet. Add your people, top it up, and pay everyone on a schedule or whenever the work is done — every payment lands on a phone, with proof.",
+  keywords: ["payroll", "mobile money", "Zambia", "MTN", "Airtel", "Zamtel", "wallet", "disbursement"],
 };
 
 export default function RootLayout({
