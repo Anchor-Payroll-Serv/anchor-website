@@ -1,130 +1,122 @@
 import Link from "next/link";
-import { ArrowRight, TrendingUp, Shield, Users } from "lucide-react";
 import type { Metadata } from "next";
+import { Icon } from "@/components/ui/icon";
 
-export const metadata: Metadata = { title: "Who It's For" };
-
-const segments = [
-  {
-    icon: TrendingUp,
-    label: "SMEs",
-    description: "Small and medium businesses across Zambia that are tired of manual payroll and fragmented tools.",
-    problem: "Stuck with manual payroll, spreadsheet errors, and time-consuming bank transfers or cash payments.",
-    solution: "An all-in-one platform that automates payroll calculations and mobile money payouts.",
-    outcome: "Faster, cleaner payroll cycles with a 60–80% reduction in admin time and effort.",
-    features: [
-      "Payroll templates for any business size",
-      "Automated NAPSA and NHIMA calculations",
-      "Bulk mobile money payouts in one click",
-      "Payslips generated automatically",
-    ],
-  },
-  {
-    icon: Shield,
-    label: "Enterprises",
-    description: "Large organizations with existing HRIS that need last-mile mobile money payout automation.",
-    problem: "Existing payroll systems are powerful but lack last-mile payout automation to mobile money wallets.",
-    solution: "A robust payout engine with real-time monitoring and immutable audit trails that integrates with your existing HRIS.",
-    outcome: "Full operational reliability, reduced risk, and complete visibility over disbursements.",
-    features: [
-      "Secure APIs for HRIS integration",
-      "Role-based access control (RBAC)",
-      "Immutable audit trails for every transaction",
-      "Dedicated enterprise support",
-    ],
-  },
-  {
-    icon: Users,
-    label: "Micro-Employers & Households",
-    description: "Households and small employers who hire domestic workers and have no formal payroll system today.",
-    problem: "No formal system for paying domestic workers, leading to disputes over payments, leave days, and advances. No proof of employment or payment history.",
-    solution: "A simple, mobile-first payroll tool to formalize payments, track leave, and generate payslips.",
-    outcome: "Creates proof, history, and trust — reducing disputes and providing dignity for both employer and employee.",
-    features: [
-      "Simple mobile-first interface",
-      "Leave and advance tracking",
-      "Payslips for domestic workers",
-      "Proof of payment history",
-    ],
-  },
-];
+export const metadata: Metadata = { title: "Who it's for" };
 
 export default function WhoItsForPage() {
   return (
-    <>
-      {/* ── Hero ── */}
-      <section className="bg-brand-deep pt-32 pb-20 md:pt-40 md:pb-24">
-        <div className="mx-auto max-w-4xl px-5 md:px-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-amber mb-4">Who It&apos;s For</p>
-          <h1 className="font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl mb-6">
-            Built for the entire Zambian economy.
+    <div>
+      {/* Page hero */}
+      <section style={{ position: "relative", overflow: "hidden", background: "var(--card)", borderBottom: "1px solid var(--border)" }}>
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage:
+              "linear-gradient(color-mix(in oklch, var(--border) 55%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklch, var(--border) 55%, transparent) 1px, transparent 1px)",
+            backgroundSize: "44px 44px",
+            pointerEvents: "none",
+          }}
+        />
+        <div className="relative max-w-[1120px] mx-auto px-6" style={{ paddingTop: 80, paddingBottom: 64 }}>
+          <p style={{ margin: "0 0 14px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)" }}>
+            Who it&apos;s for
+          </p>
+          <h1 style={{ margin: "0 0 18px", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(34px, 4vw, 52px)", lineHeight: 1.08, letterSpacing: "-0.02em", maxWidth: 640 }}>
+            Built for how{" "}
+            <span style={{ boxShadow: "inset 0 -0.3em color-mix(in oklch, var(--primary) 24%, transparent)" }}>Zambia pays people</span>.
           </h1>
-          <p className="text-lg text-white/65 max-w-2xl leading-relaxed">
-            A flexible solution for employers of all sizes — from enterprises processing thousands of payslips to households paying a single domestic worker.
+          <p style={{ margin: 0, maxWidth: 540, fontSize: 17, lineHeight: 1.6, color: "var(--muted-foreground)" }}>
+            Most wages here land on a phone, not in a bank account. Anchor is made for the businesses and people who pay that way.
           </p>
         </div>
       </section>
 
-      {/* ── Segments ── */}
-      <section className="py-20 md:py-28 bg-surface">
-        <div className="mx-auto max-w-7xl px-5 md:px-8 space-y-16">
-          {segments.map(({ icon: Icon, label, description, problem, solution, outcome, features }, i) => (
-            <div
-              key={label}
-              className={`grid gap-10 md:grid-cols-2 items-center ${i % 2 === 1 ? "md:grid-flow-dense" : ""}`}
-            >
-              <div className={i % 2 === 1 ? "md:col-start-2" : ""}>
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-deep mb-5">
-                  <Icon size={22} className="text-amber" strokeWidth={1.75} />
-                </div>
-                <h2 className="font-display text-3xl font-bold text-ink mb-3">{label}</h2>
-                <p className="text-ink-muted mb-6">{description}</p>
-                <ul className="space-y-2 mb-8">
-                  {features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-ink-muted">
-                      <span className="h-5 w-5 rounded-full bg-amber-light flex items-center justify-center text-brand text-[10px] font-bold shrink-0">✓</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/demo" className="inline-flex h-10 items-center gap-2 rounded-lg bg-brand px-5 text-sm font-semibold text-white hover:bg-brand-mid transition-colors">
-                  Request a Demo <ArrowRight size={14} />
-                </Link>
-              </div>
-              <div className={`rounded-2xl bg-white border border-border p-8 space-y-5 ${i % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""}`}>
+      {/* SMEs */}
+      <section style={{ background: "var(--background)" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start max-w-[1120px] mx-auto px-6 py-[88px]">
+          <div>
+            <p style={{ margin: "0 0 14px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)" }}>
+              Small &amp; medium businesses
+            </p>
+            <h2 style={{ margin: "0 0 18px", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px, 2.8vw, 36px)", lineHeight: 1.15, letterSpacing: "-0.015em" }}>
+              Payday without the payday panic.
+            </h2>
+            <p style={{ margin: 0, fontSize: 16, lineHeight: 1.65, color: "var(--muted-foreground)" }}>
+              If you run a shop, a farm, a workshop, or an agency, payday probably means a spreadsheet, a stack of phone numbers, and an evening of sending money one transfer at a time. Anchor turns that into one reviewed, approved run, and keeps the record for you.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4">
+            {[
+              { icon: "users" as const, title: "Five people or three hundred, mixed pay", body: "Salaried staff and casual workers on the same list, each paid their own way." },
+              { icon: "rotate-cw" as const, title: "Month-end runs itself", body: "Set the payday once. Review the run, approve it, and get your evening back." },
+              { icon: "file-text" as const, title: "Records that defend you", body: "A dispute, an audit, a partner asking questions? The payment history answers for you." },
+            ].map((row) => (
+              <div
+                key={row.title}
+                className="card-hover"
+                style={{ display: "flex", gap: 14, padding: "20px 24px", background: "var(--card)", border: "1px solid var(--border)", borderRadius: 16 }}
+              >
+                <Icon name={row.icon} size={20} style={{ color: "var(--primary)", marginTop: 2 }} />
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-ink-faint mb-2">The Problem</p>
-                  <p className="text-sm text-ink-muted leading-relaxed">{problem}</p>
-                </div>
-                <div className="border-t border-border pt-5">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-brand mb-2">Anchor Solution</p>
-                  <p className="text-sm text-ink-muted leading-relaxed">{solution}</p>
-                </div>
-                <div className="rounded-xl bg-amber-light px-5 py-4">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-brand mb-1">Outcome</p>
-                  <p className="text-sm font-medium text-ink">{outcome}</p>
+                  <h3 style={{ margin: "0 0 4px", fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 600 }}>{row.title}</h3>
+                  <p style={{ margin: 0, fontSize: 14, lineHeight: 1.55, color: "var(--muted-foreground)" }}>{row.body}</p>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="py-16 bg-white border-t border-border">
-        <div className="mx-auto max-w-3xl px-5 md:px-8 text-center">
-          <h2 className="font-display text-2xl font-bold text-ink mb-4">Not sure which plan fits you?</h2>
-          <p className="text-ink-muted mb-8">Talk to our team and we'll help you find the right solution for your organization.</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/demo" className="inline-flex h-11 items-center gap-2 rounded-lg bg-brand px-6 text-sm font-semibold text-white hover:bg-brand-mid transition-colors">
-              Request a Demo <ArrowRight size={15} />
-            </Link>
-            <Link href="/contact" className="inline-flex h-11 items-center px-6 text-sm font-medium text-ink-muted hover:text-brand transition-colors">
-              Contact us
-            </Link>
+            ))}
           </div>
         </div>
       </section>
-    </>
+
+      {/* Individuals */}
+      <section style={{ background: "var(--card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start max-w-[1120px] mx-auto px-6 py-[88px]">
+          <div>
+            <p style={{ margin: "0 0 14px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)" }}>
+              Individuals &amp; households
+            </p>
+            <h2 style={{ margin: "0 0 18px", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(26px, 2.8vw, 36px)", lineHeight: 1.15, letterSpacing: "-0.015em" }}>
+              The people who keep your home running deserve a proper payday too.
+            </h2>
+            <p style={{ margin: 0, fontSize: 16, lineHeight: 1.65, color: "var(--muted-foreground)" }}>
+              A gardener, a nanny, a guard, a small crew fixing the roof. Anchor gives them a reliable payday and a payment history, and gives you one place to manage it all, instead of remembering who was paid what, and when.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4">
+            {[
+              { icon: "clock" as const, title: "Never miss the day", body: "Set it monthly and it happens, even when you're travelling or busy." },
+              { icon: "smartphone" as const, title: "No cash handovers", body: "Money goes straight to their phone. No envelopes, no change, no doubt." },
+              { icon: "receipt-text" as const, title: "Dignity in the record", body: "A payment history helps the people who work for you prove their income." },
+            ].map((row) => (
+              <div
+                key={row.title}
+                className="card-hover"
+                style={{ display: "flex", gap: 14, padding: "20px 24px", background: "var(--background)", border: "1px solid var(--border)", borderRadius: 16 }}
+              >
+                <Icon name={row.icon} size={20} style={{ color: "var(--primary)", marginTop: 2 }} />
+                <div>
+                  <h3 style={{ margin: "0 0 4px", fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 600 }}>{row.title}</h3>
+                  <p style={{ margin: 0, fontSize: 14, lineHeight: 1.55, color: "var(--muted-foreground)" }}>{row.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA band */}
+      <section>
+        <div className="flex items-center justify-between gap-8 max-w-[1120px] mx-auto px-6 py-[72px]">
+          <h2 style={{ margin: 0, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(24px, 2.5vw, 32px)", letterSpacing: "-0.015em" }}>
+            Sound like you? Start with your first payday.
+          </h2>
+          <Link href="/get-started" className="anc-btn" style={{ height: 46, padding: "0 22px", borderRadius: 10, fontSize: 15, fontWeight: 600, textDecoration: "none", flexShrink: 0 }}>
+            Create your account
+            <Icon name="arrow-right" size={16} />
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 }
