@@ -1,383 +1,471 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
 import type { Metadata } from "next";
-import { Reveal } from "@/components/scroll-reveal";
-import { DisbursementCard } from "@/components/disbursement-card";
+import { Icon } from "@/components/ui/icon";
+import { Money } from "@/components/ui/money";
 
-export const metadata: Metadata = {
-  title: "Anchor Payroll | Payroll and Mobile Money Payments in One System",
-};
-
-const problems = [
-  {
-    title: "Disconnected tools",
-    body: "Payroll calculation and mobile money payments live in entirely separate systems, forcing time-consuming reconciliation every month.",
-  },
-  {
-    title: "MNO portals miss payroll logic",
-    body: "MTN, Airtel, and Zamtel portals handle bulk payments but can't calculate deductions, generate payslips, or maintain audit trails.",
-  },
-  {
-    title: "Compliance gaps",
-    body: "Without a centralized system, building payment history for NAPSA and NHIMA filings is difficult — and leaves businesses exposed.",
-  },
-];
-
-const steps = [
-  { num: "01", title: "Add employees", body: "Onboard full-time staff, casual workers, or domestic employees in minutes." },
-  { num: "02", title: "Configure rules", body: "Set earnings, deductions, and contributions. Anchor handles the calculations automatically." },
-  { num: "03", title: "Validate & fund", body: "Review payroll totals, catch errors, then make one transfer to your payroll wallet." },
-  { num: "04", title: "Disburse & monitor", body: "Pay every worker across MTN, Airtel, and Zamtel with one click. Track each payment in real time." },
-];
-
-const stats = [
-  { value: "3 networks", label: "MTN · Airtel · Zamtel" },
-  { value: "1 click", label: "to disburse all workers" },
-  { value: "Zero", label: "spreadsheets needed" },
-  { value: "100%", label: "NAPSA & NHIMA ready" },
-];
+export const metadata: Metadata = { title: "Pay your team on mobile money" };
 
 export default function Home() {
   return (
-    <>
-      {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-brand-deep">
-        {/* Subtle ambient glow */}
+    <div>
+      {/* Hero */}
+      <section
+        style={{ position: "relative", overflow: "hidden", borderBottom: "1px solid var(--border)", background: "var(--card)" }}
+      >
         <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
           style={{
-            background:
-              "radial-gradient(ellipse 70% 60% at 60% 40%, oklch(0.50 0.22 292 / 0.25) 0%, transparent 70%)",
+            position: "absolute",
+            inset: 0,
+            backgroundImage:
+              "linear-gradient(color-mix(in oklch, var(--border) 55%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklch, var(--border) 55%, transparent) 1px, transparent 1px)",
+            backgroundSize: "44px 44px",
+            pointerEvents: "none",
           }}
         />
-
-        <div className="relative mx-auto max-w-7xl px-5 md:px-8 pt-32 pb-24 md:pt-44 md:pb-36">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
-            {/* Left: content — staggered CSS entrance */}
-            <div>
-              <div
-                className="inline-flex items-center gap-2 rounded-full border border-amber/30 bg-amber/10 px-3 py-1 text-xs font-medium text-amber mb-8 animate-fade-up"
-                style={{ "--delay": "0ms" } as React.CSSProperties}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-amber" />
-                Built for Zambia&apos;s payroll reality
-              </div>
-
-              <h1
-                className="font-display font-black text-white leading-[1.05] tracking-tight animate-fade-up"
-                style={{
-                  fontSize: "clamp(2.5rem, 4vw + 1rem, 4.75rem)",
-                  "--delay": "100ms",
-                } as React.CSSProperties}
-              >
-                Payroll and<br />
-                mobile money.<br />
-                <span className="text-amber">One system.</span>
-              </h1>
-
-              <p
-                className="mt-6 text-white/60 leading-relaxed max-w-lg animate-fade-up"
-                style={{
-                  fontSize: "clamp(1rem, 0.5vw + 0.875rem, 1.125rem)",
-                  "--delay": "220ms",
-                } as React.CSSProperties}
-              >
-                Anchor helps Zambian employers calculate payroll, pay workers via MTN, Airtel, and Zamtel, and maintain compliant records — all in one place.
-              </p>
-
-              <div
-                className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-up"
-                style={{ "--delay": "340ms" } as React.CSSProperties}
-              >
-                <Link
-                  href="/demo"
-                  className="group inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-amber px-6 text-sm font-semibold text-brand-deep hover:bg-amber-dark hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150"
-                >
-                  Request a Demo
-                  <ArrowRight size={16} className="transition-transform duration-150 group-hover:translate-x-0.5" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex h-12 items-center justify-center px-6 text-sm font-medium text-white/50 hover:text-white transition-colors"
-                >
-                  Talk to Sales
-                </Link>
-              </div>
-
-              <p
-                className="mt-8 text-xs text-white/20 font-medium uppercase tracking-widest animate-fade-up"
-                style={{ "--delay": "430ms" } as React.CSSProperties}
-              >
-                NAPSA-ready · NHIMA-ready · No spreadsheets
-              </p>
-            </div>
-
-            {/* Right: disbursement card — slides in from right */}
-            <div
-              className="hidden lg:flex justify-center animate-fade-in-right"
-              style={{ "--delay": "500ms" } as React.CSSProperties}
+        <div
+          className="relative grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-16 items-center max-w-[1120px] mx-auto px-6"
+          style={{ paddingTop: 96, paddingBottom: 96 }}
+        >
+          <div>
+            <p
+              className="animate-rise"
+              style={{ "--i": 0, margin: "0 0 18px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)" } as React.CSSProperties}
             >
-              <DisbursementCard />
+              Payroll · Mobile money · Zambia
+            </p>
+            <h1
+              className="animate-rise"
+              style={{
+                "--i": 1,
+                margin: "0 0 22px",
+                fontFamily: "var(--font-display)",
+                fontWeight: 700,
+                fontSize: "clamp(42px, 5vw, 66px)",
+                lineHeight: 1.04,
+                letterSpacing: "-0.02em",
+                color: "var(--foreground)",
+              } as React.CSSProperties}
+            >
+              Pay your team straight to their{" "}
+              <span style={{ boxShadow: "inset 0 -0.3em color-mix(in oklch, var(--primary) 24%, transparent)" }}>mobile money</span>.
+            </h1>
+            <p
+              className="animate-rise"
+              style={{ "--i": 2, margin: "0 0 32px", maxWidth: 480, fontSize: 18, lineHeight: 1.6, color: "var(--muted-foreground)" } as React.CSSProperties}
+            >
+              Anchor gives your business a payroll wallet. Add your people, top it up, and pay everyone on a schedule or whenever the work is done. Every payment lands on a phone, with proof.
+            </p>
+            <div className="animate-rise flex items-center gap-4" style={{ "--i": 3, marginBottom: 28 } as React.CSSProperties}>
+              <Link href="/get-started" className="anc-btn" style={{ height: 46, padding: "0 22px", borderRadius: 10, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
+                Create your account
+                <Icon name="arrow-right" size={16} />
+              </Link>
+              <Link href="/product" className="link-underline" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 15, fontWeight: 500, color: "var(--foreground)", textDecoration: "none" }}>
+                See how it works
+              </Link>
+            </div>
+            <p className="animate-rise" style={{ "--i": 4, margin: 0, fontSize: 13, color: "var(--muted-foreground)" } as React.CSSProperties}>
+              Free to set up · Live on MTN Mobile Money · Airtel &amp; Zamtel coming soon
+            </p>
+          </div>
+
+          {/* Mock payroll run card */}
+          <div className="animate-rise flex justify-end" style={{ "--i": 3 } as React.CSSProperties}>
+            <div style={{ position: "relative", width: "100%", maxWidth: 420 }}>
+              <div
+                style={{
+                  position: "absolute", top: -34, left: -60, zIndex: 2, transform: "rotate(-2deg)", width: 268,
+                  background: "var(--card)", border: "1px solid var(--border)", borderRadius: 14,
+                  boxShadow: "0 12px 30px oklch(0.2 0.02 195 / 0.13)", padding: "14px 16px",
+                  display: "flex", gap: 11, alignItems: "flex-start",
+                }}
+              >
+                <span style={{ width: 34, height: 34, borderRadius: 10, background: "#FFCC00", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "oklch(0.32 0.06 90)", flexShrink: 0 }}>
+                  <Icon name="smartphone" size={18} />
+                </span>
+                <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
+                  <span style={{ fontSize: 12, fontWeight: 600, color: "var(--muted-foreground)" }}>MTN MoMo · just now</span>
+                  <span style={{ fontSize: 13, lineHeight: 1.45 }}>
+                    You have received <strong className="tabular" style={{ fontFamily: "var(--font-mono)" }}>K3,200.00</strong> from Kalulu Trading Ltd.
+                  </span>
+                </div>
+              </div>
+              <span
+                style={{
+                  position: "absolute", bottom: -22, right: -16, zIndex: 2, transform: "rotate(2deg)",
+                  display: "inline-flex", alignItems: "center", gap: 8, padding: "10px 16px", borderRadius: 999,
+                  background: "var(--foreground)", color: "var(--background)", fontSize: 13, fontWeight: 600,
+                  boxShadow: "0 10px 24px oklch(0.2 0.02 195 / 0.18)",
+                }}
+              >
+                <Icon name="clock" size={14} />
+                Next payroll · Fri 25 July
+              </span>
+              <div style={{ width: "100%", background: "var(--surface-raised)", border: "1px solid var(--border)", borderRadius: 16, boxShadow: "0 1px 2px oklch(0.2 0.02 195 / 0.06), 0 8px 24px oklch(0.2 0.02 195 / 0.07)", overflow: "hidden" }}>
+                <div style={{ padding: "20px 24px 0", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted-foreground)" }}>Payroll run · 28 June</span>
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "3px 10px", borderRadius: 999, fontSize: 12, fontWeight: 600, color: "var(--success)", background: "color-mix(in oklch, var(--success) 14%, var(--card))" }}>
+                    <Icon name="check-circle" size={13} />
+                    Paid
+                  </span>
+                </div>
+                <div style={{ padding: "14px 24px 18px" }}>
+                  <Money value={24150} size="display" />
+                  <p style={{ margin: "10px 0 0", fontSize: 13, color: "var(--muted-foreground)" }}>Paid to 9 people · MTN Mobile Money</p>
+                </div>
+                <div style={{ borderTop: "1px solid var(--border)" }}>
+                  {[
+                    { name: "Chanda Mwila", ref: "MTN ···· 4821", amount: "K3,200.00" },
+                    { name: "Grace Tembo", ref: "MTN ···· 7743", amount: "K2,850.00" },
+                    { name: "Joseph Banda", ref: "MTN ···· 1108", amount: "K2,400.00" },
+                  ].map((row, i, arr) => (
+                    <div
+                      key={row.name}
+                      style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, padding: "13px 24px", borderBottom: i < arr.length - 1 ? "1px solid var(--border)" : "none" }}
+                    >
+                      <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                        <span style={{ fontSize: 14, fontWeight: 600 }}>{row.name}</span>
+                        <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--muted-foreground)" }}>{row.ref}</span>
+                      </div>
+                      <span className="tabular" style={{ fontFamily: "var(--font-mono)", fontSize: 14, fontWeight: 600 }}>{row.amount}</span>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ padding: "12px 24px", background: "var(--muted)", display: "flex", alignItems: "center", gap: 8, color: "var(--muted-foreground)" }}>
+                  <Icon name="receipt-text" size={14} />
+                  <span style={{ fontSize: 12.5 }}>A payment record was sent to every person.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Stats bar ── */}
-      <section className="bg-surface-2 border-b border-border">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-border">
-            {stats.map(({ value, label }, i) => (
+      {/* How it works */}
+      <section style={{ background: "var(--background)" }}>
+        <div className="max-w-[1120px] mx-auto px-6 py-[88px]">
+          <p style={{ margin: "0 0 14px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)" }}>
+            How it works
+          </p>
+          <h2
+            style={{
+              margin: "0 0 48px",
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
+              fontSize: "clamp(28px, 3vw, 40px)",
+              lineHeight: 1.15,
+              letterSpacing: "-0.015em",
+              maxWidth: 560,
+            }}
+          >
+            From a list of names to{" "}
+            <span style={{ boxShadow: "inset 0 -0.3em color-mix(in oklch, var(--primary) 24%, transparent)" }}>everyone paid</span>, in four steps.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+            {[
+              { num: "01", icon: "user-plus" as const, title: "Add your people", body: "A name, a phone number, and what you pay them. That's the whole setup." },
+              { num: "02", icon: "wallet-minimal" as const, title: "Top up your wallet", body: "One transfer covers the whole payroll. Your money sits safely until you say pay." },
+              { num: "03", icon: "clock" as const, title: "Run payroll your way", body: "Set a payday and Anchor runs it for you, or pay at will when the work is done." },
+              { num: "04", icon: "check-circle" as const, title: "Everyone gets paid", body: "Money lands on each person's phone in minutes, with a record you can both point to." },
+            ].map((step) => (
               <div
-                key={label}
-                className="py-6 px-6 lg:px-8 first:pl-0 last:pr-0 animate-fade-up"
-                style={{ "--delay": `${600 + i * 80}ms` } as React.CSSProperties}
+                key={step.num}
+                className="card-hover"
+                style={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 16, padding: 24, display: "flex", flexDirection: "column", gap: 12 }}
               >
-                <p className="font-display text-2xl font-black text-brand leading-none mb-1">{value}</p>
-                <p className="text-xs text-ink-faint font-medium">{label}</p>
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--muted-foreground)" }}>{step.num}</span>
+                <Icon name={step.icon} size={22} style={{ color: "var(--primary)" }} />
+                <h3 style={{ margin: 0, fontFamily: "var(--font-display)", fontSize: 18, fontWeight: 600 }}>{step.title}</h3>
+                <p style={{ margin: 0, fontSize: 14, lineHeight: 1.55, color: "var(--muted-foreground)" }}>{step.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Problem ── */}
-      <section className="py-20 md:py-28 bg-surface">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
-
-            {/* Left: sticky statement */}
-            <Reveal className="lg:sticky lg:top-28">
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand mb-5">The Problem</p>
-              <h2
-                className="font-display font-black text-ink leading-tight"
-                style={{ fontSize: "clamp(2rem, 3vw + 0.5rem, 3rem)" }}
-              >
-                Two tools.<br />One broken<br />payroll.
-              </h2>
-              <p className="mt-5 text-ink-muted leading-relaxed" style={{ maxWidth: "16rem" }}>
-                Calculating payroll and paying people are entirely separate problems — handled by entirely separate systems.
-              </p>
-              <Link
-                href="/product"
-                className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:text-brand-mid transition-colors"
-              >
-                Six problems we solve <ArrowRight size={14} />
-              </Link>
-            </Reveal>
-
-            {/* Right: numbered problem list */}
-            <div className="divide-y divide-border">
-              {problems.map((p, i) => (
-                <Reveal key={p.title} delay={i * 100}>
-                  <div className="py-8 group">
-                    <div className="flex gap-6 items-start">
-                      <span className="font-display text-5xl font-black text-border group-hover:text-brand/20 transition-colors select-none leading-none pt-1 tabular-nums flex-shrink-0">
-                        0{i + 1}
-                      </span>
-                      <div>
-                        <h3 className="font-display text-xl font-bold text-ink mb-2">{p.title}</h3>
-                        <p className="text-ink-muted leading-relaxed" style={{ maxWidth: "42rem" }}>{p.body}</p>
-                      </div>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── How it works ── */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <Reveal className="max-w-xl mb-14">
-            <p className="text-xs font-semibold uppercase tracking-widest text-brand mb-5">How It Works</p>
-            <h2
-              className="font-display font-black text-ink leading-tight"
-              style={{ fontSize: "clamp(1.875rem, 2.5vw + 0.5rem, 2.75rem)" }}
+      {/* Two ways to pay */}
+      <section style={{ background: "var(--card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+        <div className="max-w-[1120px] mx-auto px-6 py-[88px]">
+          <p style={{ margin: "0 0 14px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)" }}>
+            Two ways to pay
+          </p>
+          <h2
+            style={{
+              margin: "0 0 48px",
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
+              fontSize: "clamp(28px, 3vw, 40px)",
+              lineHeight: 1.15,
+              letterSpacing: "-0.015em",
+              maxWidth: 560,
+            }}
+          >
+            Payroll that fits how you actually work.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div
+              className="card-hover"
+              style={{ background: "var(--background)", border: "1px solid var(--border)", borderRadius: 16, padding: 32, display: "flex", flexDirection: "column", gap: 14 }}
             >
-              From onboarding to payout<br />in one platform.
-            </h2>
-          </Reveal>
-
-          <Reveal delay={150}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
-              {steps.map(({ num, title, body }) => (
-                <div key={num} className="bg-white p-8 group hover:bg-amber-light hover:-translate-y-0.5 transition-all duration-200">
-                  <span className="font-display text-6xl font-black text-surface-2 group-hover:text-amber/30 transition-colors leading-none block mb-6 select-none tabular-nums">
-                    {num}
-                  </span>
-                  <h3 className="font-display text-lg font-bold text-ink mb-3">{title}</h3>
-                  <p className="text-sm text-ink-muted leading-relaxed">{body}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal delay={250} className="mt-10">
-            <Link
-              href="/product"
-              className="inline-flex h-10 items-center gap-2 rounded-lg border border-border px-5 text-sm font-medium text-ink hover:bg-surface-2 transition-colors"
-            >
-              See the full 7-step process <ArrowRight size={14} />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── Compliance callout ── */}
-      <section className="py-16 bg-amber-light">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <Reveal>
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand mb-4">Built for compliance</p>
-              <h2
-                className="font-display font-black text-ink leading-tight"
-                style={{ fontSize: "clamp(1.75rem, 2vw + 0.5rem, 2.5rem)" }}
-              >
-                NAPSA, NHIMA, and ZRA.<br />All accounted for.
-              </h2>
-              <p className="mt-4 text-ink-muted leading-relaxed max-w-md">
-                Anchor automatically calculates statutory contributions and keeps audit-ready records so your business stays compliant — every month, without the manual work.
-              </p>
-            </Reveal>
-            <Reveal delay={120}>
-              <div className="grid grid-cols-1 gap-3">
-                {[
-                  "Automatic NAPSA contribution calculations",
-                  "NHIMA deductions built into every payroll",
-                  "ZRA PAYE computed and recorded",
-                  "Downloadable payslips and audit trails",
-                  "Payment history stored and exportable",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <CheckCircle2 size={18} className="text-brand flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-ink-muted">{item}</span>
-                  </div>
-                ))}
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <Icon name="rotate-cw" size={20} style={{ color: "var(--primary)" }} />
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted-foreground)" }}>
+                  On a schedule
+                </span>
               </div>
-            </Reveal>
+              <h3 style={{ margin: 0, fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 600 }}>Set payday once. Anchor remembers.</h3>
+              <p style={{ margin: 0, fontSize: 15, lineHeight: 1.6, color: "var(--muted-foreground)" }}>
+                Pick the day: end of the month, every Friday, whatever your rhythm is. Anchor prepares the run, shows you the total, and pays everyone on time. You just keep the wallet topped up.
+              </p>
+            </div>
+            <div
+              className="card-hover"
+              style={{ background: "var(--background)", border: "1px solid var(--border)", borderRadius: 16, padding: 32, display: "flex", flexDirection: "column", gap: 14 }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <Icon name="arrow-up-right" size={20} style={{ color: "var(--primary)" }} />
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted-foreground)" }}>
+                  At will
+                </span>
+              </div>
+              <h3 style={{ margin: 0, fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 600 }}>Work done today, paid today.</h3>
+              <p style={{ margin: 0, fontSize: 15, lineHeight: 1.6, color: "var(--muted-foreground)" }}>
+                Casual crews, piece work, one-off jobs: pick the people, confirm the amounts, and pay on the spot. No schedule needed, no waiting for month-end.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Segments ── */}
-      <section className="py-20 md:py-28 bg-surface">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <Reveal className="max-w-xl mb-14">
-            <p className="text-xs font-semibold uppercase tracking-widest text-brand mb-5">Who It&apos;s For</p>
+      {/* Wallet */}
+      <section style={{ background: "var(--background)" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-[1120px] mx-auto px-6 py-[88px]">
+          <div>
+            <p style={{ margin: "0 0 14px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)" }}>
+              The wallet
+            </p>
             <h2
-              className="font-display font-black text-ink leading-tight"
-              style={{ fontSize: "clamp(1.875rem, 2.5vw + 0.5rem, 2.75rem)" }}
+              style={{
+                margin: "0 0 20px",
+                fontFamily: "var(--font-display)",
+                fontWeight: 700,
+                fontSize: "clamp(28px, 3vw, 40px)",
+                lineHeight: 1.15,
+                letterSpacing: "-0.015em",
+              }}
             >
-              Built for the entire<br />Zambian economy.
+              One balance. Every payday covered.
             </h2>
-          </Reveal>
+            <p style={{ margin: "0 0 24px", fontSize: 16, lineHeight: 1.65, color: "var(--muted-foreground)" }}>
+              Your Anchor wallet is where payroll money waits, separate from your trading cash, so payday never catches you off guard. Top it up when it suits you, and see exactly where every kwacha went.
+            </p>
+            <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
+              <li style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 15, color: "var(--foreground)" }}>
+                <Icon name="check" size={18} style={{ color: "var(--success)", marginTop: 2 }} />
+                Nothing moves until you approve it. Your money is yours.
+              </li>
+              <li style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 15, color: "var(--foreground)" }}>
+                <Icon name="check" size={18} style={{ color: "var(--success)", marginTop: 2 }} />
+                Anchor tells you if the balance won&apos;t cover the next run.
+              </li>
+              <li style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 15, color: "var(--foreground)" }}>
+                <Icon name="file-text" size={18} style={{ color: "var(--success)", marginTop: 2 }} />
+                A clean statement of every top-up and payout, ready to export.
+              </li>
+            </ul>
+          </div>
+          <div className="flex justify-end">
+            <div style={{ width: "100%", maxWidth: 400, background: "var(--surface-raised)", border: "1px solid var(--border)", borderRadius: 16, boxShadow: "0 1px 2px oklch(0.2 0.02 195 / 0.06), 0 8px 24px oklch(0.2 0.02 195 / 0.07)", overflow: "hidden" }}>
+              <div style={{ padding: "22px 24px 18px" }}>
+                <p style={{ margin: "0 0 10px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted-foreground)" }}>
+                  Available balance
+                </p>
+                <Money value={38400} size="display" />
+                <div style={{ marginTop: 18, display: "flex", gap: 10 }}>
+                  <span className="anc-btn" style={{ height: 38, padding: "0 16px", borderRadius: 10, fontSize: 14, fontWeight: 600 }}>
+                    <Icon name="plus" size={15} />
+                    Add funds
+                  </span>
+                  <span style={{ display: "inline-flex", alignItems: "center", height: 38, padding: "0 16px", borderRadius: 10, border: "1px solid var(--border)", background: "var(--card)", color: "var(--foreground)", fontSize: 14, fontWeight: 500 }}>
+                    Statement
+                  </span>
+                </div>
+              </div>
+              <div style={{ borderTop: "1px solid var(--border)" }}>
+                <p style={{ margin: 0, padding: "12px 24px 4px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted-foreground)" }}>
+                  Wallet activity
+                </p>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, padding: "12px 24px", borderBottom: "1px solid var(--border)" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <Icon name="arrow-down-left" size={16} style={{ color: "var(--success)" }} />
+                    <span style={{ fontSize: 14 }}>Top up · bank transfer</span>
+                  </div>
+                  <span className="tabular text-tone" style={{ fontFamily: "var(--font-mono)", fontSize: 14, fontWeight: 600, "--tone": "var(--success)" } as React.CSSProperties}>
+                    +K20,000.00
+                  </span>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, padding: "12px 24px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <Icon name="arrow-up-right" size={16} style={{ color: "var(--muted-foreground)" }} />
+                    <span style={{ fontSize: 14 }}>Payroll run · June</span>
+                  </div>
+                  <span className="tabular" style={{ fontFamily: "var(--font-mono)", fontSize: 14, fontWeight: 600 }}>
+                    −K24,150.00
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div className="grid lg:grid-cols-3 gap-5">
-            {/* SME — primary user */}
-            <Reveal className="lg:col-span-2 h-full">
-              <div
-                className="rounded-2xl p-10 flex flex-col justify-between min-h-72 h-full"
+      {/* Networks */}
+      <section style={{ background: "var(--card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+        <div className="max-w-[1120px] mx-auto px-6 py-[72px]">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 items-center">
+            <div>
+              <p style={{ margin: "0 0 14px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)" }}>
+                Networks
+              </p>
+              <h2
                 style={{
-                  background: "linear-gradient(135deg, oklch(0.24 0.16 292) 0%, oklch(0.30 0.20 292) 100%)"
+                  margin: "0 0 16px",
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 700,
+                  fontSize: "clamp(26px, 2.5vw, 34px)",
+                  lineHeight: 1.15,
+                  letterSpacing: "-0.015em",
                 }}
               >
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-amber mb-6">For SMEs</p>
-                  <h3
-                    className="font-display font-black text-white leading-tight"
-                    style={{ fontSize: "clamp(1.5rem, 2vw + 0.5rem, 2.25rem)" }}
-                  >
-                    Replace spreadsheets<br />with a proper payroll.
-                  </h3>
-                  <p className="mt-5 text-white/55 leading-relaxed" style={{ maxWidth: "26rem" }}>
-                    Small business owners spend payroll week fighting Excel formulas and making individual bank transfers. Anchor runs the whole cycle in one sitting.
-                  </p>
-                </div>
-                <p className="mt-10 font-display text-2xl font-black text-amber">60–80% less admin time.</p>
+                MTN today. Every network soon.
+              </h2>
+              <p style={{ margin: 0, fontSize: 15, lineHeight: 1.6, color: "var(--muted-foreground)" }}>
+                We&apos;re starting where most of Zambia gets paid. Airtel Money and Zamtel Kwacha are on the way. Your employee list won&apos;t change, only where the money can land.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div style={{ background: "var(--background)", border: "1px solid var(--border)", borderRadius: 16, padding: 22, display: "flex", flexDirection: "column", gap: 10 }}>
+                <span style={{ width: 10, height: 10, borderRadius: 999, background: "#FFCC00" }} />
+                <span style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 600 }}>MTN Mobile Money</span>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 6, alignSelf: "flex-start", padding: "3px 10px", borderRadius: 999, fontSize: 12, fontWeight: 600, color: "var(--success)", background: "color-mix(in oklch, var(--success) 14%, var(--card))" }}>
+                  <Icon name="check-circle" size={12} />
+                  Live now
+                </span>
               </div>
-            </Reveal>
-
-            {/* Enterprise + Household stacked */}
-            <div className="flex flex-col gap-5">
-              <Reveal className="flex-1 flex flex-col">
-                <div className="rounded-2xl bg-white border border-border p-8 flex-1">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-brand mb-4">Enterprises</p>
-                  <h3 className="font-display text-xl font-bold text-ink mb-3">Last-mile mobile money payouts.</h3>
-                  <p className="text-sm text-ink-muted leading-relaxed">
-                    Connect your existing HRIS to Zambia&apos;s mobile money networks with full audit visibility.
-                  </p>
-                </div>
-              </Reveal>
-              <Reveal delay={100} className="flex-1 flex flex-col">
-                <div className="rounded-2xl bg-amber-light p-8 flex-1">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-brand mb-4">Households</p>
-                  <h3 className="font-display text-xl font-bold text-ink mb-3">Dignity for domestic workers.</h3>
-                  <p className="text-sm text-ink-muted leading-relaxed">
-                    Formal payslips, payment history, and leave tracking for every household worker.
-                  </p>
-                </div>
-              </Reveal>
+              <div style={{ background: "var(--background)", border: "1px dashed var(--border)", borderRadius: 16, padding: 22, display: "flex", flexDirection: "column", gap: 10 }}>
+                <span style={{ width: 10, height: 10, borderRadius: 999, background: "#E4002B", opacity: 0.45 }} />
+                <span style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 600, color: "var(--muted-foreground)" }}>Airtel Money</span>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 6, alignSelf: "flex-start", padding: "3px 10px", borderRadius: 999, fontSize: 12, fontWeight: 600, color: "var(--muted-foreground)", background: "var(--muted)" }}>
+                  <Icon name="clock" size={12} />
+                  Coming soon
+                </span>
+              </div>
+              <div style={{ background: "var(--background)", border: "1px dashed var(--border)", borderRadius: 16, padding: 22, display: "flex", flexDirection: "column", gap: 10 }}>
+                <span style={{ width: 10, height: 10, borderRadius: 999, background: "#00A651", opacity: 0.45 }} />
+                <span style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 600, color: "var(--muted-foreground)" }}>Zamtel Kwacha</span>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: 6, alignSelf: "flex-start", padding: "3px 10px", borderRadius: 999, fontSize: 12, fontWeight: 600, color: "var(--muted-foreground)", background: "var(--muted)" }}>
+                  <Icon name="clock" size={12} />
+                  Coming soon
+                </span>
+              </div>
             </div>
           </div>
-
-          <Reveal delay={100} className="mt-8 text-center">
-            <Link
-              href="/who-its-for"
-              className="text-sm font-medium text-brand hover:text-brand-mid inline-flex items-center gap-1 transition-colors"
-            >
-              Detailed solutions for each segment <ArrowRight size={14} />
-            </Link>
-          </Reveal>
         </div>
       </section>
 
-      {/* ── Final CTA ── */}
-      <section
-        className="py-20 md:py-28"
-        style={{
-          background: "linear-gradient(160deg, oklch(0.24 0.16 292) 0%, oklch(0.20 0.18 300) 100%)"
-        }}
-      >
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <Reveal>
-              <h2
-                className="font-display font-black text-white leading-tight"
-                style={{ fontSize: "clamp(2rem, 3vw + 0.5rem, 3.5rem)" }}
-              >
-                See Anchor<br />in action.
-              </h2>
-              <p className="mt-5 text-white/50 leading-relaxed" style={{ maxWidth: "22rem" }}>
-                The best way to understand Anchor is to see it working. Schedule a demo with our Lusaka team.
-              </p>
-              <p className="mt-5 text-xs text-white/20 font-semibold uppercase tracking-widest">
-                Made in Lusaka, Zambia.
-              </p>
-            </Reveal>
-            <Reveal delay={120} className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/demo"
-                className="group inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-amber px-6 text-sm font-semibold text-brand-deep hover:bg-amber-dark hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150"
-              >
-                Request a Demo
-                <ArrowRight size={16} className="transition-transform duration-150 group-hover:translate-x-0.5" />
+      {/* Who it's for */}
+      <section style={{ background: "var(--background)" }}>
+        <div className="max-w-[1120px] mx-auto px-6 py-[88px]">
+          <p style={{ margin: "0 0 14px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)" }}>
+            Who it&apos;s for
+          </p>
+          <h2
+            style={{
+              margin: "0 0 48px",
+              fontFamily: "var(--font-display)",
+              fontWeight: 700,
+              fontSize: "clamp(28px, 3vw, 40px)",
+              lineHeight: 1.15,
+              letterSpacing: "-0.015em",
+              maxWidth: 560,
+            }}
+          >
+            If you pay people, Anchor is for you.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-5">
+            <div style={{ background: "var(--foreground)", color: "var(--background)", borderRadius: 16, padding: 40, display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 32 }}>
+              <div>
+                <p style={{ margin: "0 0 16px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "color-mix(in oklch, var(--background) 65%, transparent)" }}>
+                  Small &amp; medium businesses
+                </p>
+                <h3 style={{ margin: "0 0 14px", fontFamily: "var(--font-display)", fontSize: "clamp(22px, 2vw, 28px)", fontWeight: 700, lineHeight: 1.2 }}>
+                  Retire the payday spreadsheet.
+                </h3>
+                <p style={{ margin: 0, maxWidth: 420, fontSize: 15, lineHeight: 1.6, color: "color-mix(in oklch, var(--background) 75%, transparent)" }}>
+                  Shops, farms, workshops, agencies. Whether you pay five people or three hundred, stop sending money one number at a time and reconciling it by hand at month-end.
+                </p>
+              </div>
+              <Link href="/who-its-for" className="link-underline" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 600, color: "var(--background)", textDecoration: "none" }}>
+                See how SMEs use Anchor
+                <Icon name="arrow-right" size={15} style={{ color: "var(--background)" }} />
               </Link>
-              <Link
-                href="/contact"
-                className="inline-flex h-12 items-center justify-center px-6 text-sm font-medium text-white/50 border border-white/15 rounded-lg hover:text-white hover:border-white/30 transition-colors"
-              >
-                Contact us instead
+            </div>
+            <div style={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 16, padding: 40, display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 32 }}>
+              <div>
+                <p style={{ margin: "0 0 16px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted-foreground)" }}>
+                  Individuals
+                </p>
+                <h3 style={{ margin: "0 0 14px", fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 700, lineHeight: 1.2 }}>
+                  For the people you employ at home.
+                </h3>
+                <p style={{ margin: 0, fontSize: 15, lineHeight: 1.6, color: "var(--muted-foreground)" }}>
+                  A gardener, a nanny, a small building crew. Pay them reliably every month, with a record both of you can trust.
+                </p>
+              </div>
+              <Link href="/who-its-for" className="link-underline" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 600, color: "var(--primary)", textDecoration: "none" }}>
+                See how individuals use Anchor
+                <Icon name="arrow-right" size={15} style={{ color: "var(--primary)" }} />
               </Link>
-            </Reveal>
+            </div>
           </div>
         </div>
       </section>
-    </>
+
+      {/* Founding customer CTA */}
+      <section style={{ background: "var(--card)", borderTop: "1px solid var(--border)" }}>
+        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-12 items-center max-w-[1120px] mx-auto px-6 py-[88px]">
+          <div>
+            <p style={{ margin: "0 0 14px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)" }}>
+              Early access
+            </p>
+            <h2
+              style={{
+                margin: "0 0 18px",
+                fontFamily: "var(--font-display)",
+                fontWeight: 700,
+                fontSize: "clamp(28px, 3vw, 40px)",
+                lineHeight: 1.15,
+                letterSpacing: "-0.015em",
+              }}
+            >
+              Become a{" "}
+              <span style={{ boxShadow: "inset 0 -0.3em color-mix(in oklch, var(--primary) 24%, transparent)" }}>founding customer</span>.
+            </h2>
+            <p style={{ margin: 0, maxWidth: 480, fontSize: 16, lineHeight: 1.65, color: "var(--muted-foreground)" }}>
+              Anchor is new, and we&apos;re building it with the businesses that join first. Founding customers get a direct line to our team in Lusaka, and a say in what we build next.
+            </p>
+          </div>
+          <div className="flex flex-col items-start gap-3.5">
+            <Link href="/get-started" className="anc-btn" style={{ height: 46, padding: "0 22px", borderRadius: 10, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
+              Create your account
+              <Icon name="arrow-right" size={16} />
+            </Link>
+            <Link href="/pricing" className="link-underline" style={{ fontSize: 14, fontWeight: 500, color: "var(--muted-foreground)", textDecoration: "none" }}>
+              Or talk to us about pricing first
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
-
