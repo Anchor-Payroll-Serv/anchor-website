@@ -14,11 +14,11 @@ export default function PricingPage() {
               Pricing
             </p>
             <h1 style={{ margin: "0 0 18px", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(34px, 4vw, 52px)", lineHeight: 1.08, letterSpacing: "-0.02em" }}>
-              We&rsquo;re setting pricing with our{" "}
+              We&apos;re setting pricing with our{" "}
               <span style={{ boxShadow: "inset 0 -0.3em color-mix(in oklch, var(--primary) 24%, transparent)" }}>founding customers</span>.
             </h1>
             <p style={{ margin: 0, fontSize: 17, lineHeight: 1.6, color: "var(--muted-foreground)" }}>
-              Anchor is in early access, and we&rsquo;d rather price it with you than at you. Join now and you&rsquo;ll help shape a simple, per-payout price. Founding terms lock in before public pricing launches.
+              Anchor is in early access, and we&apos;d rather price it with you than at you. Join now and you&apos;ll help shape a simple, per-payout price. Founding terms lock in before public pricing launches.
             </p>
           </div>
 
