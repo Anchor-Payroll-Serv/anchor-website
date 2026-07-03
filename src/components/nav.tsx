@@ -103,6 +103,7 @@ export function Nav() {
               className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xs flex-col shadow-2xl data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right duration-300"
               style={{ background: "var(--background)" }}
             >
+              <Dialog.Title className="sr-only">Menu</Dialog.Title>
               <div className="flex h-16 items-center justify-between px-5" style={{ borderBottom: "1px solid var(--border)" }}>
                 <Link href="/" onClick={() => setOpen(false)} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <Image src="/mark-purple.png" alt="Anchor mark" width={28} height={28} style={{ width: 28, height: 28, objectFit: "contain" }} />

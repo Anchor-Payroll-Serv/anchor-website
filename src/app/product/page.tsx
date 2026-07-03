@@ -64,7 +64,6 @@ export default function ProductPage() {
           </div>
           <div className="flex justify-end">
             <div
-              className="surface-raised"
               style={{ width: "100%", maxWidth: 420, background: "var(--surface-raised)", border: "1px solid var(--border)", borderRadius: 16, boxShadow: "0 1px 2px oklch(0.2 0.02 195 / 0.06), 0 8px 24px oklch(0.2 0.02 195 / 0.07)", overflow: "hidden" }}
             >
               <div style={{ padding: "18px 24px 12px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -141,7 +140,6 @@ export default function ProductPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-[1120px] mx-auto px-6 py-[88px]">
           <div className="flex justify-start">
             <div
-              className="surface-raised"
               style={{ width: "100%", maxWidth: 380, background: "var(--surface-raised)", border: "1px solid var(--border)", borderRadius: 16, boxShadow: "0 1px 2px oklch(0.2 0.02 195 / 0.06), 0 8px 24px oklch(0.2 0.02 195 / 0.07)", padding: 24, display: "flex", flexDirection: "column", gap: 14 }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--success)" }}>

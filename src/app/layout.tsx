@@ -39,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${bricolageGrotesque.variable} ${hankenGrotesk.variable} ${geistMono.variable}`}>
-      <body className="flex min-h-screen flex-col bg-surface antialiased">
+      <body className="flex min-h-screen flex-col antialiased">
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
