@@ -1,142 +1,96 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
 import type { Metadata } from "next";
+import { Icon } from "@/components/ui/icon";
 
 export const metadata: Metadata = { title: "Pricing" };
 
-const plans = [
-  {
-    name: "Starter",
-    price: "Contact for pricing",
-    description: "For households and micro-employers getting started with formal payroll.",
-    features: [
-      "Up to 5 employees or workers",
-      "Mobile money payouts (MTN, Airtel, Zamtel)",
-      "Basic payslip generation",
-      "Leave tracking",
-      "Payment history",
-    ],
-    cta: "Get Started",
-    href: "/demo",
-    highlight: false,
-  },
-  {
-    name: "Growth",
-    price: "Contact for pricing",
-    description: "For SMEs ready to automate payroll and eliminate spreadsheet errors.",
-    features: [
-      "Up to 100 employees",
-      "Full payroll engine (NAPSA, NHIMA automated)",
-      "Bulk mobile money disbursements",
-      "Real-time payment monitoring",
-      "Compliance-ready reports (PDF & CSV)",
-      "Audit trails",
-      "Email support",
-    ],
-    cta: "Request a Demo",
-    href: "/demo",
-    highlight: true,
-  },
-  {
-    name: "Enterprise",
-    price: "Custom pricing",
-    description: "For large organizations requiring HRIS integration and dedicated support.",
-    features: [
-      "Unlimited employees",
-      "All Growth features",
-      "Secure API access",
-      "HRIS & accounting system integration",
-      "Role-based access control (RBAC)",
-      "SLA uptime guarantee",
-      "Dedicated account manager",
-    ],
-    cta: "Talk to Sales",
-    href: "/contact",
-    highlight: false,
-  },
-];
-
 export default function PricingPage() {
   return (
-    <>
-      {/* ── Hero ── */}
-      <section className="bg-brand-deep pt-32 pb-20 md:pt-40 md:pb-24">
-        <div className="mx-auto max-w-4xl px-5 md:px-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-amber mb-4">Pricing</p>
-          <h1 className="font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl mb-6">
-            Simple, transparent pricing.
-          </h1>
-          <p className="text-lg text-white/65 max-w-2xl leading-relaxed">
-            Placeholder — pricing details are coming soon. In the meantime, reach out to our team for a personalized quote based on your organization's size and needs.
-          </p>
-        </div>
-      </section>
+    <div className="flex flex-col" style={{ minHeight: "calc(100vh - 64px)" }}>
+      <section style={{ flex: 1 }}>
+        <div className="max-w-[1120px] mx-auto px-6" style={{ paddingTop: 80, paddingBottom: 96 }}>
+          <div style={{ maxWidth: 620, marginBottom: 56 }}>
+            <p style={{ margin: "0 0 14px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)" }}>
+              Pricing
+            </p>
+            <h1 style={{ margin: "0 0 18px", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(34px, 4vw, 52px)", lineHeight: 1.08, letterSpacing: "-0.02em" }}>
+              We&rsquo;re setting pricing with our{" "}
+              <span style={{ boxShadow: "inset 0 -0.3em color-mix(in oklch, var(--primary) 24%, transparent)" }}>founding customers</span>.
+            </h1>
+            <p style={{ margin: 0, fontSize: 17, lineHeight: 1.6, color: "var(--muted-foreground)" }}>
+              Anchor is in early access, and we&rsquo;d rather price it with you than at you. Join now and you&rsquo;ll help shape a simple, per-payout price. Founding terms lock in before public pricing launches.
+            </p>
+          </div>
 
-      {/* ── Pricing cards ── */}
-      <section className="py-20 md:py-28 bg-surface">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <div className="grid gap-6 md:grid-cols-3">
-            {plans.map(({ name, price, description, features, cta, href, highlight }) => (
-              <div
-                key={name}
-                className={`rounded-2xl p-8 flex flex-col relative ${
-                  highlight
-                    ? "bg-brand-deep text-white ring-2 ring-amber"
-                    : "bg-white border border-border"
-                }`}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5" style={{ maxWidth: 880 }}>
+            {/* Founding customer card */}
+            <div
+              className="flex flex-col gap-5"
+              style={{ background: "var(--surface-raised)", border: "1px solid var(--border)", borderRadius: 16, padding: 36, boxShadow: "0 1px 2px oklch(0.2 0.02 195 / 0.06), 0 8px 24px oklch(0.2 0.02 195 / 0.07)" }}
+            >
+              <div>
+                <p style={{ margin: "0 0 10px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)" }}>
+                  Founding customer
+                </p>
+                <h2 style={{ margin: "0 0 6px", fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 700 }}>Early access</h2>
+                <p style={{ margin: 0, fontSize: 14, color: "var(--muted-foreground)" }}>For SMEs and individuals joining now.</p>
+              </div>
+              <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
+                {[
+                  "Full product: wallet, scheduled and at-will payroll, records",
+                  "Founding terms locked in before public pricing",
+                  "A direct line to the team in Lusaka",
+                  "A say in what we build next",
+                ].map((item) => (
+                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 15 }}>
+                    <Icon name="check" size={18} style={{ color: "var(--success)", marginTop: 2 }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/get-started"
+                className="anc-btn"
+                style={{ justifyContent: "center", height: 46, padding: "0 22px", borderRadius: 10, fontSize: 15, fontWeight: 600, textDecoration: "none", marginTop: "auto" }}
               >
-                {highlight && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber text-brand-deep text-xs font-bold px-3 py-1 rounded-full">
-                    Most Popular
-                  </span>
-                )}
-                <div className="mb-6">
-                  <h3 className={`font-display text-xl font-bold mb-2 ${highlight ? "text-white" : "text-ink"}`}>{name}</h3>
-                  <p className={`text-2xl font-display font-bold mb-3 ${highlight ? "text-amber" : "text-ink"}`}>{price}</p>
-                  <p className={`text-sm leading-relaxed ${highlight ? "text-white/65" : "text-ink-muted"}`}>{description}</p>
-                </div>
-                <ul className="space-y-3 flex-1 mb-8">
-                  {features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 size={16} className={`mt-0.5 shrink-0 ${highlight ? "text-amber" : "text-brand"}`} />
-                      <span className={highlight ? "text-white/80" : "text-ink-muted"}>{f}</span>
+                Talk to us about joining
+                <Icon name="arrow-right" size={16} />
+              </Link>
+            </div>
+
+            {/* What to expect card */}
+            <div
+              className="flex flex-col gap-5"
+              style={{ background: "var(--card)", border: "1px dashed var(--border)", borderRadius: 16, padding: 36 }}
+            >
+              <div>
+                <p style={{ margin: "0 0 10px", fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--muted-foreground)" }}>
+                  Public pricing · coming soon
+                </p>
+                <h2 style={{ margin: "0 0 6px", fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 700, color: "var(--muted-foreground)" }}>
+                  What to expect
+                </h2>
+              </div>
+              <div className="flex flex-col gap-4" style={{ fontSize: 15, lineHeight: 1.6, color: "var(--muted-foreground)" }}>
+                <p style={{ margin: 0 }}>Our promise when pricing lands:</p>
+                <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
+                  {[
+                    "Simple and per-payout: you pay when you pay people",
+                    "No monthly minimums for small teams",
+                    "Every fee shown before you approve a run, no surprises",
+                  ].map((item) => (
+                    <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+                      <Icon name="check" size={18} style={{ color: "var(--muted-foreground)", marginTop: 2 }} />
+                      {item}
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href={href}
-                  className={`flex h-11 items-center justify-center gap-2 rounded-lg text-sm font-semibold transition-colors ${
-                    highlight
-                      ? "bg-amber text-brand-deep hover:bg-amber-dark"
-                      : "bg-brand text-white hover:bg-brand-mid"
-                  }`}
-                >
-                  {cta} <ArrowRight size={15} />
-                </Link>
               </div>
-            ))}
-          </div>
-          <p className="text-center text-xs text-ink-faint mt-10">
-            All prices are placeholder. Contact our team for current rates and available payment options.
-          </p>
-        </div>
-      </section>
-
-      {/* ── FAQ placeholder ── */}
-      <section className="py-16 bg-white border-t border-border">
-        <div className="mx-auto max-w-3xl px-5 md:px-8 text-center">
-          <h2 className="font-display text-2xl font-bold text-ink mb-4">Have questions?</h2>
-          <p className="text-ink-muted mb-8">Our team is happy to walk you through pricing, available payment options, and what each plan includes for your specific situation.</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/demo" className="inline-flex h-11 items-center gap-2 rounded-lg bg-brand px-6 text-sm font-semibold text-white hover:bg-brand-mid transition-colors">
-              Request a Demo <ArrowRight size={15} />
-            </Link>
-            <Link href="/contact" className="inline-flex h-11 items-center px-6 text-sm font-medium text-ink-muted hover:text-brand transition-colors">
-              Contact us
-            </Link>
+              <p style={{ margin: "auto 0 0", fontSize: 13, color: "var(--muted-foreground)" }}>Founding customers will see it first.</p>
+            </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
