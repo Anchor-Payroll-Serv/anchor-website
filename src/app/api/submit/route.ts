@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true });
     }
 
-    const { type, ...fields } = body as { type: "contact" | "demo"; [k: string]: string };
+    const { type, ...fields } = body as { type: "contact" | "demo" | "get-started"; [k: string]: string };
 
     const timestamp = new Date().toISOString();
 
@@ -54,6 +54,15 @@ export async function POST(req: NextRequest) {
         "Payroll Type": fields.payrollType ?? "",
         "Payment Channels": fields.paymentChannels ?? "",
         Message: fields.message ?? "",
+      });
+    } else if (type === "get-started") {
+      await appendToSheet("Get Started", {
+        Timestamp: timestamp,
+        Name: fields.name ?? "",
+        Business: fields.business ?? "",
+        Phone: fields.phone ?? "",
+        Email: fields.email ?? "",
+        "Team Size": fields.teamSize ?? "",
       });
     } else {
       return NextResponse.json({ error: "Unknown form type." }, { status: 400 });
