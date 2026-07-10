@@ -209,7 +209,7 @@ export default function ProductPage() {
             Ready to run your first payroll?
           </h2>
           <Link href="/get-started" className="anc-btn" style={{ height: 46, padding: "0 22px", borderRadius: 10, fontSize: 15, fontWeight: 600, textDecoration: "none", flexShrink: 0 }}>
-            Create your account
+            Join the waitlist
             <Icon name="arrow-right" size={16} />
           </Link>
         </div>

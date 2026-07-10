@@ -1,0 +1,21 @@
+<!--
+  Static form definition for Netlify Forms build-time detection.
+  Next.js renders the real form on the client, which Netlify's build bots cannot
+  parse, so this hidden static copy declares the form name and fields. The client
+  posts to /__forms.html with a matching form-name. Keep fields in sync with
+  src/components/get-started-form.tsx.
+-->
+<html>
+  <head></head>
+  <body>
+    <form name="waitlist" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="waitlist" />
+      <input name="bot-field" />
+      <input name="name" type="text" />
+      <input name="business" type="text" />
+      <input name="phone" type="tel" />
+      <input name="email" type="email" />
+      <input name="teamSize" type="text" />
+    </form>
+  </body>
+</html>

@@ -57,7 +57,7 @@ export default function Home() {
             </p>
             <div className="animate-rise flex items-center gap-4" style={{ "--i": 3, marginBottom: 28 } as React.CSSProperties}>
               <Link href="/get-started" className="anc-btn" style={{ height: 46, padding: "0 22px", borderRadius: 10, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-                Create your account
+                Join the waitlist
                 <Icon name="arrow-right" size={16} />
               </Link>
               <Link href="/product" className="link-underline" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 15, fontWeight: 500, color: "var(--foreground)", textDecoration: "none" }}>
@@ -457,7 +457,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-start gap-3.5">
             <Link href="/get-started" className="anc-btn" style={{ height: 46, padding: "0 22px", borderRadius: 10, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-              Create your account
+              Join the waitlist
               <Icon name="arrow-right" size={16} />
             </Link>
             <Link href="/pricing" className="link-underline" style={{ fontSize: 14, fontWeight: 500, color: "var(--muted-foreground)", textDecoration: "none" }}>

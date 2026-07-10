@@ -17,29 +17,28 @@ export function GetStartedForm() {
     setError("");
 
     const fd = new FormData(e.currentTarget);
-    const data = {
-      type: "get-started",
-      name: fd.get("name") as string,
-      business: fd.get("business") as string,
-      phone: fd.get("phone") as string,
-      email: fd.get("email") as string,
-      teamSize: fd.get("teamSize") as string,
-      honeypot: fd.get("honeypot") as string,
-    };
+    // Netlify Forms: post URL-encoded to the static /__forms.html definition with
+    // a matching form-name. See public/__forms.html.
+    const body = new URLSearchParams({
+      "form-name": "waitlist",
+      "bot-field": (fd.get("bot-field") as string) ?? "",
+      name: (fd.get("name") as string) ?? "",
+      business: (fd.get("business") as string) ?? "",
+      phone: (fd.get("phone") as string) ?? "",
+      email: (fd.get("email") as string) ?? "",
+      teamSize: (fd.get("teamSize") as string) ?? "",
+    });
 
     try {
-      const res = await fetch("/api/submit", {
+      const res = await fetch("/__forms.html", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
       });
-      if (!res.ok) {
-        const json = await res.json();
-        throw new Error(json.error ?? "Submission failed.");
-      }
+      if (!res.ok) throw new Error("Submission failed.");
       setStatus("success");
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong.");
+    } catch {
+      setError("Something went wrong. Please try again in a moment.");
       setStatus("error");
     }
   }
@@ -50,9 +49,9 @@ export function GetStartedForm() {
         <span style={{ color: "var(--success)" }}>
           <Icon name="check-circle" size={32} />
         </span>
-        <h2 style={{ margin: 0, fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 700 }}>Thanks, we&apos;ve got it.</h2>
+        <h2 style={{ margin: 0, fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 700 }}>You&apos;re on the list.</h2>
         <p style={{ margin: 0, fontSize: 15, lineHeight: 1.6, color: "var(--muted-foreground)" }}>
-          We&apos;ll be in touch within one working day to set up your account and plan your first payroll. Nothing else is needed from you for now.
+          We&apos;ll be in touch as we bring founding customers onto Anchor, usually within one working day. Nothing else is needed from you for now.
         </p>
         <button
           type="button"
@@ -67,8 +66,8 @@ export function GetStartedForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4.5">
-      {/* Honeypot */}
-      <input type="text" name="honeypot" className="hidden" tabIndex={-1} autoComplete="off" />
+      {/* Honeypot — Netlify drops any submission where this is filled */}
+      <input type="text" name="bot-field" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <div className="flex flex-col gap-1.5">
         <label htmlFor="gs-name" style={{ fontSize: 13.5, fontWeight: 600 }}>Your name</label>
@@ -129,7 +128,7 @@ export function GetStartedForm() {
         className="anc-btn"
         style={{ height: 48, borderRadius: 10, fontSize: 15, fontWeight: 600, marginTop: 6, opacity: status === "loading" ? 0.6 : 1 }}
       >
-        {status === "loading" ? "Submitting…" : "Create your account"}
+        {status === "loading" ? "Submitting…" : "Join the waitlist"}
       </button>
       <p style={{ margin: 0, fontSize: 12.5, color: "var(--muted-foreground)", textAlign: "center" }}>
         Your details stay with us. We&apos;ll only use them to set you up.
