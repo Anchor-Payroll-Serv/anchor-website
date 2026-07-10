@@ -9,6 +9,8 @@ const product = [
 const company = [
   { href: "/about", label: "About" },
   { href: "/get-started", label: "Get started" },
+  { href: "/terms", label: "Terms of service" },
+  { href: "/privacy", label: "Privacy policy" },
 ];
 
 export function Footer() {
